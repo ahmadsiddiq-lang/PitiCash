@@ -25,7 +25,7 @@ export default function Rekomendasi() {
                     return (
                         <View key={index} style={styles.BoxList}>
                             <View style={styles.BoxImage}>
-                                <Image style={{ resizeMode: 'contain', width: '100%', height: '100%' }} source={item.image} />
+                                <Image style={{ resizeMode: 'stretch', width: '100%', height: '100%' }} source={item.image} />
                             </View>
                             <View style={styles.BoxContentRight}>
                                 <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>

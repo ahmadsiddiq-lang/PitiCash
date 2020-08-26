@@ -21,15 +21,15 @@ export default function PitiCash() {
                 <View style={styles.BoxBootom}>
                     <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/TopUp.png')} />
-                        <Text>Top Up</Text>
+                        <Text style={{ fontSize: sizeFont(3.5) }}>Top Up</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Transfer.png')} />
-                        <Text>Transfer</Text>
+                        <Text style={{ fontSize: sizeFont(3.5) }} > Transfer</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/History.png')} />
-                        <Text>History</Text>
+                        <Text style={{ fontSize: sizeFont(3.5) }}> History</Text>
                     </TouchableOpacity>
                 </View>
             </View>

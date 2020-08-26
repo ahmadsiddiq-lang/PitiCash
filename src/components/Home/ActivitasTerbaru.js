@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { color } from '../../assets/colors/color';
 import { sizeWidth, SCREEN_WIDTH, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 

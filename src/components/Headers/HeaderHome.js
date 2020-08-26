@@ -12,18 +12,20 @@ export default function HeaderHome() {
 
     return (
         <View style={styles.Container}>
-            <View style={styles.ContainerAvatar}>
-                <View style={styles.BoxAvatar}>
-                    <Image style={{ resizeMode: 'contain', width: sizeWidth(10.5), height: sizeWidth(10.5) }} source={require('../../assets/images/User.png')} />
+            <View style={styles.BoxContent}>
+                <View style={styles.ContainerAvatar}>
+                    <View style={styles.BoxAvatar}>
+                        <Image style={{ resizeMode: 'contain', width: sizeWidth(10.5), height: sizeWidth(10.5) }} source={require('../../assets/images/User.png')} />
+                    </View>
+                    <View style={{ marginLeft: 15 }}>
+                        <Text style={{ color: color.fontWhite }}>Selamat datang,</Text>
+                        <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(4) }}>Jhone Doe</Text>
+                    </View>
                 </View>
-                <View style={{ marginLeft: 15 }}>
-                    <Text style={{ color: color.fontWhite }}>Selamat datang,</Text>
-                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(4) }}>Jhone Doe</Text>
+                <View style={{ marginTop: 5 }}>
+                    <View style={styles.Circle} />
+                    <FontAwesome name="bell" color={color.background1} size={25} />
                 </View>
-            </View>
-            <View style={{ marginTop: 5 }}>
-                <View style={styles.Circle} />
-                <FontAwesome name="bell" color={color.background1} size={25} />
             </View>
         </View>
     );
@@ -34,12 +36,12 @@ const styles = StyleSheet.create({
         // flex: 1,
         // borderWidth: 1,
         height: sizeWidth(20),
-        // alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 30,
+    },
+    BoxContent: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        // alignItems: 'center',
-        paddingTop: 20,
-        paddingHorizontal: 30,
     },
     ContainerAvatar: {
         flexDirection: 'row',
