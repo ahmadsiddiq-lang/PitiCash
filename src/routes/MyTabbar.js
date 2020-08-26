@@ -79,8 +79,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 5,
         paddingHorizontal: 20,
-        borderTopWidth: 0.5,
-        borderTopColor: color.border1,
+        // borderTopWidth: 0.5,
+        // borderTopColor: color.border1,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
     },
     BtnIcon: {
         alignItems: 'center',
