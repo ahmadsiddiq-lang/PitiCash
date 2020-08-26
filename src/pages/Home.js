@@ -5,6 +5,7 @@ import { color } from '../assets/colors/color';
 import Content from '../components/GlobalComponent/BgContent';
 import PitiCash from '../components/Home/PitiCash';
 import ActivitasTerbaru from '../components/Home/ActivitasTerbaru';
+import Rekomendasi from '../components/Home/Rekomendasi';
 import { SCREEN_WIDTH } from '../assets/responsive/Size';
 
 
@@ -16,6 +17,7 @@ export default function Home() {
                 <PitiCash />,
                 <ActivitasTerbaru />,
                 <View style={styles.Line} />,
+                <Rekomendasi />,
             ]} />
         </View>
     );
