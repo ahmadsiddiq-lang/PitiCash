@@ -31,9 +31,9 @@ export default function ActivitasTerbaru() {
                                         borderRadius: sizeWidth(10),
                                     }} source={item.image} />
                                 </View>
-                                <View>
-                                    <Text style={{ color: item.color }}>{item.title}</Text>
-                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>{item.qty}</Text>
+                                <View style={styles.BOxText}>
+                                    <Text numberOfLines={1} style={{ color: item.color, fontSize: sizeFont(3.5) }}>{item.title}</Text>
+                                    <Text numberOfLines={1} style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>{item.qty}</Text>
                                 </View>
                             </View>
                         );
@@ -82,6 +82,13 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight: 10,
+        marginRight: 5,
+    },
+    BOxText: {
+        // borderWidth: 1,
+        maxWidth: sizeWidth(26),
+        // display: 'flex',
+        // flexWrap: 'wrap',
+        // flexDirection: 'column',
     },
 });

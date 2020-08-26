@@ -78,14 +78,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: 5,
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
         borderTopWidth: 0.5,
         borderTopColor: color.border1,
     },
     BtnIcon: {
         alignItems: 'center',
         // borderWidth: 1,
-        width: sizeWidth(15),
+        width: sizeWidth(18),
     },
     Btn: {
         width: sizeWidth(7),

@@ -5,7 +5,7 @@ import { sizeWidth } from '../../assets/responsive/Size';
 export default function BgContent({ content }) {
     return (
         <View style={styles.Container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {content && content.map((item, index) => {
                     return (
                         <SafeAreaView key={index}>
