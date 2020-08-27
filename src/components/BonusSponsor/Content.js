@@ -29,7 +29,7 @@ export default function Head() {
                                     <View style={styles.BoxItem}>
                                         <Image style={styles.ImageDompet} source={require('../../assets/images/DompetTrans.png')} />
                                         <View style={styles.BoxText}>
-                                            <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Bonus pairing 10% PC from Yogara99 </Text>
+                                            <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Bonus Sponsor 30% PC from Yogara99 </Text>
                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                 <Text style={{ color: color.fontBody2 }}>24-05-2020, 12:59</Text>
                                                 <Text style={{ color: color.mainColor }}>3:00</Text>

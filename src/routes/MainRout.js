@@ -10,16 +10,14 @@ import Project from '../pages/Project';
 import MyProject from '../pages/MyProject';
 import Akun from '../pages/Akun';
 import BonusPairing from '../pages/BonusPairing';
+import BonusSponsor from '../pages/BonusSponsor';
 import { color } from '../assets/colors/color';
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
     return (
-        <Tab.Navigator
-
-            tabBar={props => <MyTabBar {...props} />}
-        >
+        <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Project" component={Project} />
             <Tab.Screen name="MyProject" component={MyProject} />
@@ -37,6 +35,7 @@ export default function App() {
             <Stack.Navigator headerMode="none" initialRouteName="BonusPairing">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
+                <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
             </Stack.Navigator>
         </NavigationContainer>
     );
