@@ -55,13 +55,14 @@ export default function ProjectTerbaru() {
 
 const styles = StyleSheet.create({
     Container: {
-        marginVertical: 20,
+        marginVertical: 10,
     },
     Head: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 20,
+        // borderWidth: 1,
     },
     Content: {
         // borderWidth: 1,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         borderColor: '#b5b5b5',
         width: SCREEN_WIDTH / 1.3,
         borderRadius: 10,
-        marginTop: 10,
+        marginTop: 5,
         marginHorizontal: 10,
     },
     BoxImage: {
