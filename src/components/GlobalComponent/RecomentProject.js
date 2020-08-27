@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
-import RecomentProject from '../GlobalComponent/RecomentProject';
 
 const data = [
     { image: require('../../assets/images/Project1.png'), persen: '40%', rp: '250.000.000', date: '30 Juli 2020' },
@@ -15,13 +14,34 @@ const data = [
 export default function Rekomendasi() {
     return (
         <View style={styles.Container}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={{ fontFamily: Poppins.Medium }}>Rekomendasi Project</Text>
-                <TouchableOpacity activeOpacity={0.6}>
-                    <Text style={{ color: color.mainColor }}>Lihat Semua</Text>
-                </TouchableOpacity>
-            </View>
-            <RecomentProject />
+            {
+                data.map((item, index) => {
+                    return (
+                        <View key={index} style={styles.BoxList}>
+                            <View style={styles.BoxImage}>
+                                <Image style={{ resizeMode: 'stretch', width: '100%', height: '100%' }} source={item.image} />
+                            </View>
+                            <View style={styles.BoxContentRight}>
+                                <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>
+                                <View style={styles.BoxBg}>
+                                    <View style={[styles.BoxUp, { width: item.persen }]} />
+                                </View>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between',
+                                }}>
+                                    <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5), marginTop: 5 }}>Target</Text>
+                                    <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5), marginTop: 5 }}>Closing</Text>
+                                </View>
+                                <View style={styles.BoxDate}>
+                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3) }}>Rp. {item.rp}</Text>
+                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(2.5) }}>{item.date}</Text>
+                                </View>
+                            </View>
+                        </View>
+                    );
+                })
+            }
         </View>
     );
 }
@@ -30,7 +50,6 @@ const styles = StyleSheet.create({
     Container: {
         flex: 1,
         marginTop: 10,
-        paddingHorizontal: 20,
     },
     BoxList: {
         flexDirection: 'row',
