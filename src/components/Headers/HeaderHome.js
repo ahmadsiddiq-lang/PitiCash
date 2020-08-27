@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
         borderColor: color.borderWhite,
     },
     Circle: {
-        width: 15,
-        height: 15,
-        borderRadius: 15 / 2,
+        width: 13,
+        height: 13,
+        borderRadius: 13 / 2,
         backgroundColor: 'blue',
         borderWidth: 1,
         borderColor: color.mainColor,

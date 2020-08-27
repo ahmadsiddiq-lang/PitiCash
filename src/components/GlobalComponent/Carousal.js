@@ -10,19 +10,21 @@ export default function Carousal({ data = [] }) {
                 horizontal
                 showsHorizontalScrollIndicator={false}
             >
-                {
-                    data.map((item, index) => {
-                        return (
-                            <View key={index} style={styles.BoxImage}>
-                                <Image style={{
-                                    resizeMode: 'contain',
-                                    width: sizeWidth(80),
-                                    height: sizeWidth(30),
-                                }} source={item.image} />
-                            </View>
-                        );
-                    })
-                }
+                <View style={{ flexDirection: 'row', paddingHorizontal: 8 }}>
+                    {
+                        data.map((item, index) => {
+                            return (
+                                <View key={index} style={styles.BoxImage}>
+                                    <Image style={{
+                                        resizeMode: 'contain',
+                                        width: sizeWidth(88),
+                                        height: sizeWidth(32),
+                                    }} source={item.image} />
+                                </View>
+                            );
+                        })
+                    }
+                </View>
             </ScrollView>
         </View>
     );
@@ -31,13 +33,13 @@ export default function Carousal({ data = [] }) {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
-        paddingHorizontal: 5,
+        // paddingHorizontal: 5.5,
     },
     BoxImage: {
         // borderWidth: 1,
-        width: sizeWidth(80),
+        width: sizeWidth(88),
         borderRadius: 7,
         overflow: 'hidden',
-        margin: 10,
+        margin: 8,
     },
 });

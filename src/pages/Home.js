@@ -22,7 +22,6 @@ const BoxCarousal = () => {
                     <Text style={{ color: color.mainColor }}>Lihat Semua</Text>
                 </TouchableOpacity>
             </View>
-
             <Carousal data={CarousalHOme} />
         </View>
     );

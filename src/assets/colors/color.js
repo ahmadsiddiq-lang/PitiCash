@@ -10,4 +10,5 @@ export const color = {
     fontBody3: '#d4d4d4',
     fontWhite: '#ffff',
     fontBlack: '#000',
+    SearchColor: '#00DCC2',
 };
