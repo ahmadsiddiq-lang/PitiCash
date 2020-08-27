@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { color } from '../assets/colors/color';
 import { sizeWidth, sizeFont } from '../assets/responsive/Size';
 
@@ -54,7 +54,6 @@ export default function MyTabBar({ state, descriptors, navigation }) {
 
     return (
         <View style={styles.Container}>
-            <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
             {
                 state.routes.map((route, index) => {
                     return (

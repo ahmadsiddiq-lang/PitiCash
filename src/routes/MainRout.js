@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,7 +9,8 @@ import Home from '../pages/Home';
 import Project from '../pages/Project';
 import MyProject from '../pages/MyProject';
 import Akun from '../pages/Akun';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import BonusPairing from '../pages/BonusPairing';
+import { color } from '../assets/colors/color';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,8 +33,10 @@ const Stack = createStackNavigator();
 export default function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator headerMode="none" initialRouteName="Tabs">
+            <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
+            <Stack.Navigator headerMode="none" initialRouteName="BonusPairing">
                 <Stack.Screen name="Tabs" component={MyTabs} />
+                <Stack.Screen name="BonusPairing" component={BonusPairing} />
             </Stack.Navigator>
         </NavigationContainer>
     );
