@@ -45,7 +45,7 @@ export default function Content() {
                                         <Text style={{ fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>
                                         <View style={styles.BoxPrice}>
                                             <View style={styles.boxTgl}>
-                                                <Text style={{ fontSize: sizeFont(2.5) }}>{item.date}</Text>
+                                                <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>{item.date}</Text>
                                             </View>
                                             <View style={styles.BoxRp}>
                                                 <Text style={{ fontFamily: Poppins.Medium, marginLeft: 8 }}>Rp. {item.rp}</Text>
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: color.mainColor,
         borderRadius: 10,
-        height: sizeWidth(6),
+        height: sizeWidth(5),
         padding: 5,
         alignItems: 'center',
         justifyContent: 'center',
