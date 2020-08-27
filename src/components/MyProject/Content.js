@@ -53,7 +53,7 @@ export default function Content() {
                                         </View>
                                     </View>
                                     <TouchableOpacity style={styles.Btn}>
-                                        <Text style={{ color: color.mainColor }}>Berhasil</Text>
+                                        <Text style={{ color: color.mainColor, fontSize: sizeFont(2.5) }}>Berhasil</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
