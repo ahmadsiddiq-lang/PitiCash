@@ -20,8 +20,8 @@ export default function Head() {
                     </TouchableOpacity>
                 </View>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.BoxLisContent}>
+            <View style={styles.BoxLisContent}>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     {
                         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item, index) => {
                             return (
@@ -40,8 +40,8 @@ export default function Head() {
                             );
                         })
                     }
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </View>
         </View>
     );
 }
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
         padding: 5,
         paddingHorizontal: 15,
         borderColor: color.border1,
-        marginBottom: 5,
     },
     Image: {
         resizeMode: 'contain',
