@@ -36,7 +36,7 @@ export default function Banner() {
                         return (
                             <View key={index}>
                                 <View style={styles.BoxImage}>
-                                    <Image style={{ resizeMode: 'contain', width: SCREEN_WIDTH / 1.1 - 1, height: sizeWidth(33.2) }} source={item.image} />
+                                    <Image style={{ resizeMode: 'contain', width: '100%', height: '100%' }} source={item.image} />
                                 </View>
                             </View>
                         );
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         // borderWidth: 1,
         // height: 100,
-        width: SCREEN_WIDTH / 1.1 - 1,
-        height: sizeWidth(34),
+        width: SCREEN_WIDTH - 40,
+        height: sizeWidth(33),
         borderRadius: 10,
     },
     BoxCircle: {

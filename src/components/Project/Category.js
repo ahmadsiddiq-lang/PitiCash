@@ -17,8 +17,8 @@ export default function Category() {
                 {
                     data.map((item, index) => {
                         return (
-                            <TouchableOpacity activeOpacity={0.6} style={{ alignItems: 'center' }}>
-                                <View key={index} style={styles.BoxImage}>
+                            <TouchableOpacity key={index} activeOpacity={0.6} style={{ alignItems: 'center' }}>
+                                <View style={styles.BoxImage}>
                                     <Image style={{
                                         resizeMode: 'contain',
                                         width: sizeWidth(13),
