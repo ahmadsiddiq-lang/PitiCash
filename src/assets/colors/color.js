@@ -3,6 +3,7 @@ export const color = {
     background1: '#ffff',
     background2: '#d0f7f2',
     background3: '#ededed',
+    background4: '#d4d4d4',
     border1: '#d4d4d4',
     borderWhite: '#ffff',
     fontBody1: '#000',
