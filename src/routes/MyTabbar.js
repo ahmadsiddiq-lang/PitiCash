@@ -25,10 +25,10 @@ export default function MyTabBar({ state, descriptors, navigation }) {
     };
 
     const iconTab = [
-        { image: require('../assets/images/icontab/icon1.png'), title: 'Home' },
-        { image: require('../assets/images/icontab/icon2.png'), title: 'Project' },
-        { image: require('../assets/images/icontab/icon3.png'), title: 'My Project' },
-        { image: require('../assets/images/icontab/icon4.png'), title: 'Akun' },
+        { image: require('../assets/images/icontab/icon1.png'), imageW: require('../assets/images/icontab/HomeW.png'), title: 'Home' },
+        { image: require('../assets/images/icontab/icon2.png'), imageW: require('../assets/images/icontab/ProjectW.png'), title: 'Project' },
+        { image: require('../assets/images/icontab/icon3.png'), imageW: require('../assets/images/icontab/MyProjectW.png'), title: 'My Project' },
+        { image: require('../assets/images/icontab/icon4.png'), imageW: require('../assets/images/icontab/AkunW.png'), title: 'Akun' },
     ];
 
     const Btn = {
@@ -60,7 +60,11 @@ export default function MyTabBar({ state, descriptors, navigation }) {
                     return (
                         <TouchableOpacity onPress={() => handleScreen({ route, index })} key={index} style={styles.BtnIcon} >
                             <View style={[curentIndex === index && Btn, BtnAnActive]}>
-                                <Image style={{ resizeMode: 'contain', width: sizeWidth(5) }} source={iconTab[index].image} />
+                                {
+                                    curentIndex === index ?
+                                        <Image style={{ resizeMode: 'contain', width: sizeWidth(3.5) }} source={iconTab[index].imageW} /> :
+                                        <Image style={{ resizeMode: 'contain', width: sizeWidth(5) }} source={iconTab[index].image} />
+                                }
                             </View>
                             <Text style={[{ fontSize: sizeFont(2.5), marginBottom: 5 }, curentIndex === index ? TextActive : { color: color.fontBody2 }]}>{iconTab[index].title}</Text>
                         </TouchableOpacity>

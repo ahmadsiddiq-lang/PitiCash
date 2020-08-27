@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { version } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
