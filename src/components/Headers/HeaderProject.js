@@ -1,6 +1,5 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingBottom: 10,
+        paddingBottom: 8,
     },
     BoxInput: {
         // borderWidth: 1,

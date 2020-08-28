@@ -21,7 +21,7 @@ export default function HeaderMyProject() {
 
 const styles = StyleSheet.create({
     Container: {
-        height: sizeWidth(20),
+        height: sizeWidth(15),
         // borderWidth: 1,
         justifyContent: 'center',
     },
