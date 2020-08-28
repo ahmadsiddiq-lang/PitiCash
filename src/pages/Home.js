@@ -9,7 +9,7 @@ import PitiCash from '../components/Home/PitiCash';
 import ActivitasTerbaru from '../components/Home/ActivitasTerbaru';
 import Rekomendasi from '../components/Home/Rekomendasi';
 import Carousal from '../components/GlobalComponent/Carousal';
-import { SCREEN_WIDTH } from '../assets/responsive/Size';
+import { SCREEN_WIDTH, sizeFont } from '../assets/responsive/Size';
 import { CarousalHOme } from '../DataDummy';
 
 
@@ -19,7 +19,7 @@ const BoxCarousal = () => {
             <View style={styles.BoxHead}>
                 <Text style={{ fontFamily: Poppins.Medium }}>Info & Promo</Text>
                 <TouchableOpacity activeOpacity={0.6}>
-                    <Text style={{ color: color.mainColor }}>Lihat Semua</Text>
+                    <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Lihat Semua</Text>
                 </TouchableOpacity>
             </View>
             <Carousal data={CarousalHOme} />
