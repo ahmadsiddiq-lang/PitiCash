@@ -27,8 +27,8 @@ export default function Content() {
                     </View>
                 </View>
             </View>
-            <View style={styles.BoxContent}>
-                <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.BoxContent}>
                     {
                         dataBonusReward.map((item, index) => {
                             return (
@@ -48,10 +48,10 @@ export default function Content() {
                                             </View>
                                         </View>
                                         <View style={styles.BoxPoinFooter}>
-                                            <Text style={{ color: color.fontBody2 }}>Point Kiri
+                                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kiri
                                                 <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
                                             </Text>
-                                            <Text style={{ color: color.fontBody2 }}>Point Kanan
+                                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kanan
                                                 <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
                                             </Text>
                                         </View>
@@ -76,17 +76,42 @@ export default function Content() {
                                 </View>
                             </View>
                             <View style={styles.BoxPoinFooter}>
-                                <Text style={{ color: color.fontBody2 }}>Point Kiri
+                                <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kiri
                                     <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
                                 </Text>
-                                <Text style={{ color: color.fontBody2 }}>Point Kanan
+                                <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kanan
                                     <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
                                 </Text>
                             </View>
                         </View>
                     </View>
-                </ScrollView>
-            </View>
+                    <View style={styles.BoxList}>
+                        <View style={styles.BoxImage}>
+                            <Image style={styles.ImageProduct} source={require('../../assets/images/Product/hp.png')} />
+                        </View>
+                        <View style={styles.BoxTextList}>
+                            <View style={styles.BoxTitle}>
+                                <View style={styles.BOxTitleWidth}>
+                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Hp Android + 500.00 Piti Cash</Text>
+                                </View>
+                                <View style={styles.BoxBtn}>
+                                    <TouchableOpacity activeOpacity={0.6} style={styles.BtnPending} >
+                                        <Text style={{ color: color.fontPink, fontFamily: Poppins.Medium }}>Pending</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                            <View style={styles.BoxPoinFooter}>
+                                <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kiri
+                                    <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
+                                </Text>
+                                <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Point Kanan
+                                    <Text style={{ color: color.fontBlack }}> 15.000.00</Text>
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
         </View >
     );
 }
@@ -133,6 +158,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // borderWidth: 1,
         paddingHorizontal: 20,
+        paddingBottom: 10,
     },
     BoxList: {
         flex: 1,
