@@ -11,6 +11,7 @@ import MyProject from '../pages/MyProject';
 import Akun from '../pages/Akun';
 import BonusPairing from '../pages/BonusPairing';
 import BonusSponsor from '../pages/BonusSponsor';
+import BonusReward from '../pages/BonusReward';
 import { color } from '../assets/colors/color';
 
 const Tab = createBottomTabNavigator();
@@ -32,10 +33,11 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="BonusPairing">
+            <Stack.Navigator headerMode="none" initialRouteName="BonusReward">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
+                <Stack.Screen name="BonusReward" component={BonusReward} />
             </Stack.Navigator>
         </NavigationContainer>
     );

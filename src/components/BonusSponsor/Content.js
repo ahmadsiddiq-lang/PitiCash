@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         paddingHorizontal: 20,
         paddingVertical: 5,
+        backgroundColor: color.background1,
     },
     BoxContent: {
         borderWidth: 1,
