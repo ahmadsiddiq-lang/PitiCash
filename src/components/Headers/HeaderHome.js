@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         height: sizeWidth(20),
         justifyContent: 'center',
-        paddingHorizontal: 30,
+        paddingHorizontal: 25,
     },
     BoxContent: {
         justifyContent: 'space-between',

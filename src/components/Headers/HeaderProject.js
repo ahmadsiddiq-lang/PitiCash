@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        paddingBottom: 10,
     },
     BoxInput: {
         // borderWidth: 1,
@@ -44,11 +45,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: color.SearchColor,
         width: '90%',
+        overflow: 'hidden',
     },
     Input: {
         // borderWidth: 1,
         width: '90%',
-        padding: 5,
+        padding: 1,
         paddingLeft: 15,
         color: color.fontWhite,
         fontSize: sizeFont(3.5),
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
     },
     BoxBell: {
         // borderWidth: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
     Circle: {
         width: 13,
@@ -75,6 +77,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 2,
         right: 0,
-        top: 5,
+        // top: 5,
     },
 });
