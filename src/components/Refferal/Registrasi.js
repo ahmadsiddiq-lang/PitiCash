@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { color } from '../../assets/colors/color';
-import { sizeFont } from '../../assets/responsive/Size';
+import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
 
 export default function Registrasi() {
 
@@ -12,20 +12,20 @@ export default function Registrasi() {
     return (
         <View style={styles.Container}>
             <View style={styles.Content1}>
-                <View style={styles.BoxUser}>
-                    <FontAwesome name="user" size={40} color={color.mainColor} />
+                <TouchableOpacity activeOpacity={0.6} style={styles.BoxUser}>
+                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
                     <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>12</Text>
+                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                         </View>
                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>17</Text>
+                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={styles.BoxContentLine}>
                 <View style={styles.BoxLineLeft} />
@@ -40,22 +40,22 @@ export default function Registrasi() {
                 {
                     [1, 2].map((item, index) => {
                         return (
-                            <View style={styles.BoxList}>
+                            <TouchableOpacity activeOpacity={0.6} key={index} style={styles.BoxList}>
                                 <View style={styles.BoxUser}>
-                                    <FontAwesome name="user" size={40} color={color.mainColor} />
+                                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
                                     <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>12</Text>
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>17</Text>
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         );
                     })
                 }
@@ -76,22 +76,22 @@ export default function Registrasi() {
                 {
                     [1, 2, 3, 4].map((item, index) => {
                         return (
-                            <View style={styles.BoxList}>
+                            <TouchableOpacity activeOpacity={0.6} style={styles.BoxList}>
                                 <View style={styles.BoxUser}>
-                                    <FontAwesome name="user" size={40} color={color.mainColor} />
+                                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
                                     <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>12</Text>
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={18} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 5, fontSize: sizeFont(3) }}>17</Text>
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         );
                     })
                 }
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     BoxUser: {
         borderWidth: 0.5,
         borderColor: color.border1,
-        paddingVertical: 10,
+        paddingVertical: 8,
         paddingHorizontal: 8,
         alignItems: 'center',
         borderRadius: 20,
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     BoxLineLeft: {
         borderRightWidth: 1,
         borderColor: color.mainColor,
-        height: 35,
+        height: sizeWidth(10),
         flex: 2,
     },
     BoxLineCenter: {
@@ -139,13 +139,13 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderTopWidth: 2,
         borderColor: color.mainColor,
-        height: 35,
+        height: sizeWidth(10),
         flex: 4,
     },
     BoxLineRight: {
         borderLeftWidth: 1,
         borderColor: color.mainColor,
-        height: 35,
+        height: sizeWidth(10),
         flex: 2,
     },
     BoxLineCenter2: {
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderBottomWidth: 1,
         borderColor: color.mainColor,
-        height: 35,
+        height: sizeWidth(10),
         flex: 4,
     },
     BoxLineCenterA: {
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     },
     BoxLineCenterB: {
         flex: 4,
-        borderTopWidth: 1,
+        borderTopWidth: 2,
         borderLeftWidth: 1,
         borderRightWidth: 1,
         borderColor: color.mainColor,
