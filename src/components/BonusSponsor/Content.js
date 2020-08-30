@@ -48,6 +48,7 @@ export default function Head() {
 
 const styles = StyleSheet.create({
     Container: {
+        flex: 1,
         // borderWidth: 1,
         paddingHorizontal: 20,
         paddingVertical: 5,
@@ -75,6 +76,8 @@ const styles = StyleSheet.create({
     BoxLisContent: {
         // borderWidth: 1,
         paddingTop: 10,
+        flex: 1,
+        paddingBottom: 20,
     },
     BoxList: {
         // borderWidth: 1,

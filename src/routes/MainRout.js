@@ -12,6 +12,8 @@ import Akun from '../pages/Akun';
 import BonusPairing from '../pages/BonusPairing';
 import BonusSponsor from '../pages/BonusSponsor';
 import BonusReward from '../pages/BonusReward';
+import Profit from '../pages/Profit';
+import Reaferals from '../pages/Refferal';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -34,12 +36,14 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="Splash">
+            <Stack.Navigator headerMode="none" initialRouteName="Reaferals">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
                 <Stack.Screen name="BonusReward" component={BonusReward} />
                 <Stack.Screen name="Splash" component={Splash} />
+                <Stack.Screen name="Profit" component={Profit} />
+                <Stack.Screen name="Reaferals" component={Reaferals} />
             </Stack.Navigator>
         </NavigationContainer>
     );
