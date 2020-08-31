@@ -69,7 +69,7 @@ export default function Content() {
 
     return (
         <>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.Container}>
                     <View style={styles.BoxUp}>
                         <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Transfer ke nomor Virtual Account</Text>
@@ -85,7 +85,7 @@ export default function Content() {
                             <View style={styles.BoxItemList}>
                                 <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.3), paddingVertical: 5 }}>088927938649827</Text>
                                 <TouchableOpacity onPress={() => copyNoVirtual()} activeOpacity={0.6}>
-                                    <Text style={{ color: color.mainColor }}>Salin</Text>
+                                    <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Salin</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -94,7 +94,7 @@ export default function Content() {
                             <View style={styles.BoxItemList}>
                                 <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.3), paddingVertical: 5 }}>Rp 200.000</Text>
                                 <TouchableOpacity onPress={() => copyJumlahBayar()} activeOpacity={0.6}>
-                                    <Text style={{ color: color.mainColor }}>Salin</Text>
+                                    <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Salin</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -148,10 +148,10 @@ export default function Content() {
             </ScrollView>
             <View style={styles.Footer}>
                 <TouchableOpacity activeOpacity={0.6} style={styles.BtnInves}>
-                    <Text style={{ color: color.borderWhite, fontFamily: Poppins.Medium }}>CEK INVESTASI</Text>
+                    <Text style={{ color: color.borderWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>CEK INVESTASI</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.6} style={styles.BtnKembali}>
-                    <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium }}>KEMBALI KE PROJECT</Text>
+                    <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>KEMBALI KE PROJECT</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -198,6 +198,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         borderBottomWidth: 0.5,
+        borderBottomColor: color.border1,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -214,7 +215,7 @@ const styles = StyleSheet.create({
         padding: 8,
         backgroundColor: color.mainColor,
         borderRadius: 7,
-        marginTop: 15,
+        // marginTop: 15,
         alignItems: 'center',
     },
     BtnKembali: {

@@ -1,6 +1,5 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { Text, View, Button, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
