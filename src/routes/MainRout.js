@@ -27,7 +27,7 @@ function MyTabs() {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Project" component={Project} />
             <Tab.Screen name="MyProject" component={MyProject} />
-            <Tab.Screen name="Akun" component={Akun} />
+            <Tab.Screen name="Akun" component={Reaferals} />
         </Tab.Navigator>
     );
 }
@@ -38,7 +38,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="Transfer">
+            <Stack.Navigator headerMode="none" initialRouteName="Tabs">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
