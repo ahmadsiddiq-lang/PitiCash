@@ -1,8 +1,10 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, { useRef, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
-import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
+import { sizeFont, sizeWidth, sizeHeight } from '../../assets/responsive/Size';
+import RBSheet from 'react-native-raw-bottom-sheet';
 
 const data = [
     { title: 'Virtual Cash', date: '24-06-202', status: '1' },
@@ -14,6 +16,14 @@ const data = [
 ];
 
 export default function Refferal() {
+    const refRBSheet = useRef();
+
+    const [dataSheet, setDataSheet] = useState(null);
+
+    const handleSheetActive = (index) => {
+        setDataSheet(index);
+        refRBSheet.current.open();
+    };
 
     const RenderItem = ({ item, index }) => {
         return (
@@ -24,7 +34,7 @@ export default function Refferal() {
                 </View>
                 {
                     item.status === '1' ?
-                        <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
+                        <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} style={styles.Btn}>
                             <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.3) }}>Active</Text>
                         </TouchableOpacity> :
                         <TouchableOpacity activeOpacity={0.6} style={styles.BtnNon}>
@@ -32,6 +42,60 @@ export default function Refferal() {
                         </TouchableOpacity>
                 }
             </View>
+        );
+    };
+
+    const ComponetSheet = ({ dataForSheet }) => {
+        return (
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.ContainerSheet}>
+                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Detail Member</Text>
+                    <View style={{ marginTop: 20 }}>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>User Id</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>Jhon Doe</Text>
+                        </View>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>Username</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>Jhon Doe</Text>
+                        </View>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>Name</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>Jhon Doe</Text>
+                        </View>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>Email</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>Jhon_Doe21@gmail.com</Text>
+                        </View>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>No. Handphone</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>081234566789</Text>
+                        </View>
+                        <View style={styles.ListItemSheet}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>Join Date</Text>
+                            <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>24-06-2020</Text>
+                        </View>
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'flex-end',
+                        }}>
+                            <Text style={{ fontSize: sizeFont(3.3) }}>Status</Text>
+                            <View style={{
+                                overflow: 'hidden',
+                                borderRadius: 5,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: color.mainColor,
+                                height: sizeWidth(7),
+                                width: sizeWidth(23),
+                            }}>
+                                <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium, color: color.fontWhite }}>Active</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
         );
     };
 
@@ -48,6 +112,27 @@ export default function Refferal() {
                     }
                 </View>
             </ScrollView>
+            <RBSheet
+                ref={refRBSheet}
+                closeOnDragDown={true}
+                closeOnPressMask={true}
+                height={sizeHeight(40)}
+                animationType="fade"
+                customStyles={{
+                    wrapper: {
+                        // backgroundColor: 'transparent',
+                    },
+                    draggableIcon: {
+                        backgroundColor: color.border1,
+                    },
+                    container: {
+                        borderTopLeftRadius: 20,
+                        borderTopRightRadius: 20,
+                    },
+                }}
+            >
+                <ComponetSheet dataForSheet={dataSheet} />
+            </RBSheet>
         </View>
     );
 }
@@ -85,5 +170,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#ff124d',
         height: sizeWidth(7),
         width: sizeWidth(23),
+    },
+    ContainerSheet: {
+        paddingHorizontal: 20,
+        // paddingBottom: 10,
+        marginBottom: 10,
+    },
+    ListItemSheet: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: sizeWidth(2),
     },
 });
