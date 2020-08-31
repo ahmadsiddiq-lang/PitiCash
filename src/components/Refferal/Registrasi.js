@@ -162,7 +162,7 @@ export default function Registrasi() {
                 closeOnDragDown={true}
                 closeOnPressMask={true}
                 height={sizeHeight(48)}
-                animationType="fade"
+                animationType="slide"
                 customStyles={{
                     wrapper: {
                         // backgroundColor: 'transparent',
