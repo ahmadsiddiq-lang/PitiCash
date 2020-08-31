@@ -10,7 +10,7 @@ export default function HeadTopUp({ navigation, title }) {
         <View style={styles.Container}>
             <View style={styles.Content}>
                 <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.Btn}>
-                    <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
+                    <Ionicons name="arrow-back-outline" size={25} color={color.fontBlack} />
                 </TouchableOpacity>
                 <Text style={styles.Title}>{title}</Text>
             </View>
@@ -23,8 +23,20 @@ const styles = StyleSheet.create({
         height: sizeWidth(15),
         // borderWidth: 1,
         justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: color.border1,
     },
     Content: {
-
+        // borderWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
+    Title: {
+        color: color.fontBlack,
+        fontSize: sizeFont(4),
+        fontFamily: Poppins.Medium,
+        marginLeft: 10,
     },
 });
