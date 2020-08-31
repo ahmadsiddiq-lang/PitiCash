@@ -27,12 +27,12 @@ const BoxCarousal = () => {
     );
 };
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         <View style={styles.Container}>
             <Header />
             <Content content={[
-                <PitiCash />,
+                <PitiCash navigation={navigation} />,
                 <ActivitasTerbaru />,
                 <View style={styles.Line} />,
                 <Rekomendasi />,

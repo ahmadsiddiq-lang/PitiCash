@@ -38,7 +38,7 @@ const dataArray = [
     },
 ];
 
-export default function Content() {
+export default function Content({ navigation }) {
     const ref = useRef();
     const [curentIndex, setCurentIndex] = useState(null);
 
@@ -150,7 +150,7 @@ export default function Content() {
                 <TouchableOpacity activeOpacity={0.6} style={styles.BtnInves}>
                     <Text style={{ color: color.borderWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>CEK INVESTASI</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnKembali}>
+                <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnKembali}>
                     <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>KEMBALI KE PROJECT</Text>
                 </TouchableOpacity>
             </View>

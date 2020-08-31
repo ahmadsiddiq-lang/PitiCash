@@ -5,7 +5,7 @@ import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
 
-export default function PitiCash() {
+export default function PitiCash({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Content}>
@@ -19,11 +19,11 @@ export default function PitiCash() {
                     <Text style={{ lineHeight: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>Rp. 2.860.000</Text>
                 </View>
                 <View style={styles.BoxBootom}>
-                    <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
+                    <TouchableOpacity onPress={() => navigation.navigate('TopUp')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/TopUp.png')} />
                         <Text style={{ fontSize: sizeFont(3.5) }}>Top Up</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
+                    <TouchableOpacity onPress={() => navigation.navigate('Transfer')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Transfer.png')} />
                         <Text style={{ fontSize: sizeFont(3.5) }} > Transfer</Text>
                     </TouchableOpacity>
