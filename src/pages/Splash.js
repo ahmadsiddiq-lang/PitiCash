@@ -100,15 +100,20 @@ export default class Splash extends React.Component {
                             })
                         }
                     </View>
-                    {
-                        this.state.indexOf === data.length - 1 ?
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
-                                <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Start</Text>
-                            </TouchableOpacity> :
-                            <TouchableOpacity onPress={() => this._handleNext()} activeOpacity={0.6} style={styles.Btn}>
-                                <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Next</Text>
-                            </TouchableOpacity>
-                    }
+                    <View style={styles.BoxBtn}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
+                            <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Skip</Text>
+                        </TouchableOpacity>
+                        {
+                            this.state.indexOf === data.length - 1 ?
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
+                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Start</Text>
+                                </TouchableOpacity> :
+                                <TouchableOpacity onPress={() => this._handleNext()} activeOpacity={0.6} style={styles.Btn}>
+                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Next</Text>
+                                </TouchableOpacity>
+                        }
+                    </View>
                 </View>
             </View>
         );
@@ -171,5 +176,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 3,
         borderRadius: 10,
+        marginLeft: 15,
+    },
+    BoxBtn: {
+        flexDirection: 'row',
     },
 });

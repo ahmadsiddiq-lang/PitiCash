@@ -15,6 +15,7 @@ import BonusReward from '../pages/BonusReward';
 import Profit from '../pages/Profit';
 import Reaferals from '../pages/Refferal';
 import MetodePembayaran from '../pages/MetodePembayaran';
+import TopUp from '../pages/TopUp';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -37,7 +38,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="MetodePembayaran">
+            <Stack.Navigator headerMode="none" initialRouteName="Splash">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
@@ -46,6 +47,7 @@ export default function App() {
                 <Stack.Screen name="Profit" component={Profit} />
                 <Stack.Screen name="Reaferals" component={Reaferals} />
                 <Stack.Screen name="MetodePembayaran" component={MetodePembayaran} />
+                <Stack.Screen name="TopUp" component={TopUp} />
             </Stack.Navigator>
         </NavigationContainer>
     );
