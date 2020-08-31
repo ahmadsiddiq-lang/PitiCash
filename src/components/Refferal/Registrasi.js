@@ -76,7 +76,7 @@ export default function Registrasi() {
                 {
                     [1, 2, 3, 4].map((item, index) => {
                         return (
-                            <TouchableOpacity activeOpacity={0.6} style={styles.BoxList}>
+                            <TouchableOpacity key={index} activeOpacity={0.6} style={styles.BoxList}>
                                 <View style={styles.BoxUser}>
                                     <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
                                     <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     BoxLineCenter2: {
         borderRightWidth: 1,
         borderLeftWidth: 1,
-        borderBottomWidth: 1,
+        // borderBottomWidth: 1,
         borderColor: color.mainColor,
         height: sizeWidth(10),
         flex: 4,
@@ -165,10 +165,10 @@ const styles = StyleSheet.create({
     },
     BoxLineCenterB: {
         flex: 4,
-        borderTopWidth: 2,
-        borderLeftWidth: 1,
-        borderRightWidth: 1,
-        borderColor: color.mainColor,
+        // borderTopWidth: 2,
+        // borderLeftWidth: 1,
+        // borderRightWidth: 1,
+        // borderColor: color.mainColor,
     },
     BoxLineCenterC: {
         flex: 4,
