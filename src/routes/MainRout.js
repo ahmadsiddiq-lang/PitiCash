@@ -17,6 +17,7 @@ import MetodePembayaran from '../pages/MetodePembayaran';
 import TopUp from '../pages/TopUp';
 import Transfer from '../pages/Transfer';
 import DetailProject from '../pages/DetailProject';
+import Login from '../pages/Login';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -39,7 +40,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="Splash">
+            <Stack.Navigator headerMode="none" initialRouteName="Login">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
@@ -51,6 +52,7 @@ export default function App() {
                 <Stack.Screen name="TopUp" component={TopUp} />
                 <Stack.Screen name="Transfer" component={Transfer} />
                 <Stack.Screen name="DetailProject" component={DetailProject} />
+                <Stack.Screen name="Login" component={Login} />
             </Stack.Navigator>
         </NavigationContainer>
     );
