@@ -1,84 +1,121 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
 import { color } from '../assets/colors/color';
-import { SCREEN_WIDTH, sizeFont, SCREEN_HEIGHT, sizeWidth } from '../assets/responsive/Size';
+import Content from '../components/GlobalComponent/BgContent';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+
 
 export default function Login({ navigation }) {
     return (
         <View style={styles.Container}>
-            <View style={styles.BoxImageBack}>
-                <ImageBackground style={styles.ImageBack} source={require('../assets/images/Login/Login.png')} />
-            </View>
-            <View style={styles.BoxText}>
-                <Text style={styles.Title}>Piti Cash</Text>
-            </View>
-            <View style={styles.BoxBtn}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnUp}>
-                    <Text style={{ color: color.mainColor, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Log In</Text>
+            <View style={styles.Head}>
+                <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
+                    <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnDown}>
-                    <Text style={{ color: color.fontWhite, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Sign Up</Text>
-                </TouchableOpacity>
+                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
             </View>
+            <Content content={[
+                <ContentLogin />,
+            ]} />
         </View>
     );
 }
+
+const ContentLogin = () => {
+    return (
+        <View style={styles.BoxContentLogin}>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Log In</Text>
+            <View style={styles.BoxInput}>
+                <View style={styles.BoxContentInput}>
+                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Username</Text>
+                    <View style={styles.BoxInputItem}>
+                        <Image style={styles.IconInput} source={require('../assets/images/Login/user.png')} />
+                        <TextInput placeholder="Masukkan Username" style={styles.Input} />
+                    </View>
+                </View>
+                <View style={styles.BoxContentInput}>
+                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Password</Text>
+                    <View style={styles.BoxInputItem}>
+                        <Image style={styles.IconInput} source={require('../assets/images/Login/lock.png')} />
+                        <TextInput secureTextEntry={true} placeholder="Masukkan Password" style={styles.Input} />
+                    </View>
+                </View>
+            </View>
+            <TouchableOpacity activeOpacity={0.6}>
+                <Text style={{ textAlign: 'right', fontSize: sizeFont(3.3) }}>Lupa Password ?</Text>
+            </TouchableOpacity>
+            <View style={styles.Footer}>
+                <TouchableOpacity activeOpacity={0.6} style={styles.BtnLogin}>
+                    <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Log In</Text>
+                </TouchableOpacity>
+                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Belum mempunyai akun ? <Text style={{ color: color.mainColor }}>SignUp</Text></Text>
+            </View>
+            <View />
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
         backgroundColor: color.mainColor,
     },
-    BoxImageBack: {
-        position: 'absolute',
+    Head: {
         // borderWidth: 1,
-        width: SCREEN_WIDTH,
-        // height: 100,
-        bottom: 0,
+        flexDirection: 'row',
+        paddingHorizontal: 20,
         alignItems: 'center',
-    },
-    ImageBack: {
-        resizeMode: 'contain',
-        width: sizeWidth(80),
-        height: sizeWidth(80),
-        opacity: 0.3,
-        // position: 'absolute',
-        // bottom: 0,
-        // left: sizeWidth(80) / 4,
-    },
-    BoxText: {
-        width: SCREEN_WIDTH,
-        height: '75%',
         justifyContent: 'center',
-        alignItems: 'center',
+        height: sizeWidth(15),
+        marginBottom: 30,
     },
-    Title: {
-        color: color.fontWhite,
-        fontSize: sizeFont(12),
-        fontFamily: Poppins.Bold,
+    BtnBack: {
+        marginRight: 20,
+        position: 'absolute',
+        left: 20,
     },
-    BoxBtn: {
-        width: SCREEN_WIDTH,
-        height: '25%',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        // alignItems: 'center',
+    BoxContentLogin: {
+        // borderWidth: 1,
+        marginTop: 50,
         paddingHorizontal: 20,
     },
-    BtnUp: {
+    BoxContentInput: {
+        marginBottom: 20,
+    },
+    BoxInput: {
         // borderWidth: 1,
+        marginTop: 30,
+    },
+    IconInput: {
+        width: sizeWidth(5),
+        height: sizeWidth(5),
+    },
+    Input: {
+        // borderWidth: 1,
+        padding: 0,
+        width: '95%',
+        paddingLeft: 10,
+        letterSpacing: 0.8,
+        fontSize: sizeFont(3.5),
+    },
+    BoxInputItem: {
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderBottomColor: color.border1,
+        paddingBottom: 10,
+        justifyContent: 'space-between',
+    },
+    Footer: {
+        marginVertical: 30,
+    },
+    BtnLogin: {
+        backgroundColor: color.mainColor,
         alignItems: 'center',
         padding: 8,
         borderRadius: 7,
-        backgroundColor: color.background1,
-    },
-    BtnDown: {
-        alignItems: 'center',
-        padding: 5,
-        borderRadius: 7,
-        borderWidth: 2,
-        borderColor: color.background1,
-        marginTop: 10,
+        marginBottom: 20,
     },
 });
