@@ -134,11 +134,12 @@ const styles = StyleSheet.create({
     },
     BoxImage: {
         // borderWidth: 1,
-        marginTop: 50,
+        marginTop: 20,
+        height: '60%',
     },
     Image: {
         width: SCREEN_WIDTH,
-        height: sizeWidth(105),
+        height: '100%',
         resizeMode: 'stretch',
     },
     BoxText: {
