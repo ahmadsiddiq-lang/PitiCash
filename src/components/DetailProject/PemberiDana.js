@@ -6,7 +6,7 @@ import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 
 
-export default function PemberiDana() {
+export default function PemberiDana({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.BoxUp}>

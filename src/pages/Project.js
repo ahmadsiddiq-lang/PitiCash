@@ -10,15 +10,15 @@ import Category from '../components/Project/Category';
 import RecomentProject from '../components/GlobalComponent/RecomentProject';
 import { SCREEN_WIDTH } from '../assets/responsive/Size';
 
-const ProjectScreen = () => {
+const ProjectScreen = ({ navigation }) => {
     return (
         <View style={{ paddingHorizontal: 20 }}>
-            <RecomentProject />
+            <RecomentProject navigation={navigation} />
         </View>
     );
 };
 
-export default function Project() {
+export default function Project({ navigation }) {
     return (
         <View style={styles.Container}>
             <Header />
@@ -27,7 +27,7 @@ export default function Project() {
                 <ProjectTerbaru />,
                 <View style={styles.Line} />,
                 <Category />,
-                <ProjectScreen />,
+                <ProjectScreen navigation={navigation} />,
             ]} />
         </View>
     );

@@ -11,7 +11,7 @@ export default function Banner({ navigation }) {
         <View style={styles.Container}>
             <View style={styles.BoxBanner}>
                 <View style={styles.Head}>
-                    <TouchableOpacity activeOpacity={0.6} style={{ padding: 5 }}>
+                    <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={{ padding: 5 }}>
                         <Ionicons name="chevron-back" size={30} color={color.mainColor} />
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6} style={{ padding: 5 }}>

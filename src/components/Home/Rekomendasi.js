@@ -12,7 +12,7 @@ const data = [
     { image: require('../../assets/images/Project3.png'), persen: '60%', rp: '250.000.000', date: '10 Agustus 2020' },
 ];
 
-export default function Rekomendasi() {
+export default function Rekomendasi({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -21,7 +21,7 @@ export default function Rekomendasi() {
                     <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Lihat Semua</Text>
                 </TouchableOpacity>
             </View>
-            <RecomentProject />
+            <RecomentProject navigation={navigation} />
         </View>
     );
 }

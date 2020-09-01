@@ -5,6 +5,7 @@ import Head from '../components/Refferal/Head';
 import Registrasi from '../components/Refferal/Registrasi';
 import Refferal from '../components/Refferal/Refferal';
 import Generation from '../components/Refferal/Generation';
+import { color } from '../assets/colors/color';
 
 const dataHead = [
     { title: 'Registrasi' },
@@ -38,5 +39,6 @@ export default function Reaferals({ navigation }) {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
+        backgroundColor: color.background1,
     },
 });

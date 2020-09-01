@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
@@ -11,13 +11,13 @@ const data = [
     { image: require('../../assets/images/Project3.png'), persen: '60%', rp: '250.000.000', date: '10 Agustus 2020' },
 ];
 
-export default function Rekomendasi() {
+export default function Rekomendasi({ navigation }) {
     return (
         <View style={styles.Container}>
             {
                 data.map((item, index) => {
                     return (
-                        <View key={index} style={styles.BoxList}>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('DetailProject')} key={index} style={styles.BoxList}>
                             <View style={styles.BoxImage}>
                                 <Image style={{ resizeMode: 'stretch', width: '100%', height: '100%' }} source={item.image} />
                             </View>
@@ -38,7 +38,7 @@ export default function Rekomendasi() {
                                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(2.5) }}>{item.date}</Text>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     );
                 })
             }

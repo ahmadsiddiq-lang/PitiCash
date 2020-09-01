@@ -35,7 +35,7 @@ export default function Home({ navigation }) {
                 <PitiCash navigation={navigation} />,
                 <ActivitasTerbaru />,
                 <View style={styles.Line} />,
-                <Rekomendasi />,
+                <Rekomendasi navigation={navigation} />,
                 <BoxCarousal />,
             ]} />
         </View>
