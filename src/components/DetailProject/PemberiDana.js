@@ -6,7 +6,7 @@ import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 
 
-export default function PemberiDana({ navigation }) {
+export default function PemberiDana({ navigation, handleSheetActive }) {
     return (
         <View style={styles.Container}>
             <View style={styles.BoxUp}>
@@ -33,7 +33,7 @@ export default function PemberiDana({ navigation }) {
                 }
             </View>
             <View style={styles.Footer}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
+                <TouchableOpacity onPress={() => handleSheetActive()} activeOpacity={0.6} style={styles.Btn}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>INVESTASI SEKARANG</Text>
                 </TouchableOpacity>
             </View>
