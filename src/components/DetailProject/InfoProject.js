@@ -30,8 +30,8 @@ export default function InfoProject() {
                 <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium, paddingVertical: 5 }}>Deskripsi Project</Text>
                 {
                     LineText ?
-                        <Text numberOfLines={4} style={{ textAlign: 'justify', color: color.fontBody2, fontSize: sizeFont(3) }}>Deserunt anim consequat consectetur veniam qui culpa laboris commodo deserunt. In incididunt deserunt enim nostrud adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur. adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur.</Text> :
-                        <Text numberOfLines={0} style={{ textAlign: 'justify', color: color.fontBody2, fontSize: sizeFont(3) }}>Deserunt anim consequat consectetur veniam qui culpa laboris commodo deserunt. In incididunt deserunt enim nostrud adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur. adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur.</Text>
+                        <Text numberOfLines={0} style={{ textAlign: 'justify', color: color.fontBody2, fontSize: sizeFont(3) }}>Deserunt anim consequat consectetur veniam qui culpa laboris commodo deserunt. In incididunt deserunt enim nostrud adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur. adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur.</Text> :
+                        <Text numberOfLines={4} style={{ textAlign: 'justify', color: color.fontBody2, fontSize: sizeFont(3) }}>Deserunt anim consequat consectetur veniam qui culpa laboris commodo deserunt. In incididunt deserunt enim nostrud adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur. adipisicing reprehenderit anim. Qui laboris consequat tempor enim consectetur excepteur.</Text>
                 }
                 <Text onPress={() => setText(LineText ? false : true)} style={{ marginTop: 10, color: color.mainColor, fontSize: sizeFont(3.3) }}>Lihat Detail</Text>
             </View>

@@ -10,9 +10,9 @@ export default function PemberiDana({ navigation, handleSheetActive }) {
     return (
         <View style={styles.Container}>
             <View style={styles.BoxUp}>
-                <Text>PemberiDana</Text>
+                <Text>Pemberi Dana</Text>
                 <TouchableOpacity activeOpacity={0.6}>
-                    <Text style={{ color: color.mainColor }}>Lihat Semua</Text>
+                    <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Lihat Semua</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.Content}>
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     BoxUp: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         paddingHorizontal: 20,
         paddingVertical: 10,
     },

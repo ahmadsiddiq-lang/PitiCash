@@ -10,7 +10,6 @@ import { sizeFont, sizeWidth, sizeHeight } from '../assets/responsive/Size';
 import { color } from '../assets/colors/color';
 import { Poppins } from '../assets/fonts/Poppins';
 
-
 export default function DetailProject({ navigation }) {
 
     const refRBSheet = useRef();
@@ -20,7 +19,6 @@ export default function DetailProject({ navigation }) {
     const handleSheetActive = (index) => {
         // setDataSheet(index);
         refRBSheet.current.open();
-        console.log('masuk');
     };
 
     return (
@@ -66,7 +64,7 @@ const ComponetSheet = ({ dataForSheet }) => {
             <View style={styles.BoxContentUp}>
                 <View style={styles.BoxInput}>
                     <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium }}>Rp. </Text>
-                    <TextInput keyboardType="numeric" textAlign={'right'} style={styles.Input} />
+                    <TextInput autoFocus={true} keyboardType="numeric" textAlign={'right'} style={styles.Input} />
                 </View>
                 <Text style={{ fontSize: sizeFont(2.8), marginTop: 10, color: color.fontBody2, fontFamily: Poppins.Italic }}>* Minimal investasi Rp. 100.000</Text>
             </View>
@@ -80,7 +78,7 @@ const ComponetSheet = ({ dataForSheet }) => {
                     <Text style={{ color: color.fontBody2 }}>Virtual Account BCA</Text>
                 </View>
                 <View style={styles.BoxSwitch}>
-                    <Text style={{ color: color.fontBody2 }}>Sembunyikan nama Saya</Text>
+                    <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Sembunyikan nama Saya</Text>
                     <Switch
                         trackColor={{ false: '#767577', true: color.background6 }}
                         thumbColor={isEnabled ? color.mainColor : '#f4f3f4'}

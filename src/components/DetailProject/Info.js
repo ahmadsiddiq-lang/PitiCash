@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        width: 15,
-        height: 15,
+        // padding: 2,
+        width: sizeWidth(3.5),
+        height: sizeWidth(3.5),
     },
     BoxValidasi: {
         backgroundColor: color.background2,
