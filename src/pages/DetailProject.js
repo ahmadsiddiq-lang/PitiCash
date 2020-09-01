@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState, useRef } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, Image, Switch, TouchableOpacity } from 'react-native';
 import Banner from '../components/DetailProject/Banner';
 import Info from '../components/DetailProject/Info';
 import InfoProject from '../components/DetailProject/InfoProject';
@@ -35,7 +35,7 @@ export default function DetailProject({ navigation }) {
                 ref={refRBSheet}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
-                height={sizeHeight(40)}
+                height={sizeHeight(48)}
                 animationType="fade"
                 customStyles={{
                     wrapper: {
@@ -57,6 +57,9 @@ export default function DetailProject({ navigation }) {
 }
 
 const ComponetSheet = ({ dataForSheet }) => {
+
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
         <View>
             <Text style={{ textAlign: 'center', fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Masukkan Nominal Investasi</Text>
@@ -65,7 +68,32 @@ const ComponetSheet = ({ dataForSheet }) => {
                     <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium }}>Rp. </Text>
                     <TextInput keyboardType="numeric" textAlign={'right'} style={styles.Input} />
                 </View>
-                <Text>* Minimal investasi Rp. 100.000</Text>
+                <Text style={{ fontSize: sizeFont(2.8), marginTop: 10, color: color.fontBody2, fontFamily: Poppins.Italic }}>* Minimal investasi Rp. 100.000</Text>
+            </View>
+            <View style={styles.BoxCOntentSheet}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20 }}>
+                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Metode Pembayaran</Text>
+                    <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Ubah</Text>
+                </View>
+                <View style={styles.BoxMetode}>
+                    <Image style={styles.ImageBank} source={require('../assets/images/MetodePembayaran/bca.png')} />
+                    <Text style={{ color: color.fontBody2 }}>Virtual Account BCA</Text>
+                </View>
+                <View style={styles.BoxSwitch}>
+                    <Text style={{ color: color.fontBody2 }}>Sembunyikan nama Saya</Text>
+                    <Switch
+                        trackColor={{ false: '#767577', true: color.background6 }}
+                        thumbColor={isEnabled ? color.mainColor : '#f4f3f4'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                    />
+                </View>
+            </View>
+            <View style={styles.BOxBtn}>
+                <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
+                    <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5) }}>LANJUTKAN PEMBAYARAN</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -95,5 +123,43 @@ const styles = StyleSheet.create({
         padding: 0,
         fontFamily: Poppins.Medium,
         fontSize: sizeFont(4.5),
+    },
+    BoxCOntentSheet: {
+        // borderWidth: 1,
+        marginTop: 15,
+    },
+    BoxMetode: {
+        borderBottomWidth: 1,
+        borderBottomColor: color.border1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
+    ImageBank: {
+        resizeMode: 'contain',
+        width: sizeWidth(10),
+        height: sizeWidth(10),
+        marginRight: 10,
+    },
+    BoxSwitch: {
+        // borderWidth: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+        marginTop: 15,
+        // height: 20,
+    },
+    BOxBtn: {
+        // borderWidth: 1,
+        marginTop: 10,
+        paddingHorizontal: 20,
+    },
+    Btn: {
+        marginTop: 20,
+        padding: 10,
+        borderRadius: 7,
+        backgroundColor: color.mainColor,
+        alignItems: 'center',
     },
 });
