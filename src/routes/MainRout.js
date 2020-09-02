@@ -31,6 +31,7 @@ import DetailNotifikasi from '../pages/DetailNotifikasi';
 import DetailMyProject from '../pages/DetailMyProject';
 import History from '../pages/History';
 import TopUpSaldo from '../pages/TopUpSaldo';
+import AllProject from '../pages/AllProject';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -79,6 +80,7 @@ export default function App() {
                 <Stack.Screen name="DetailMyProject" component={DetailMyProject} />
                 <Stack.Screen name="History" component={History} />
                 <Stack.Screen name="TopUpSaldo" component={TopUpSaldo} />
+                <Stack.Screen name="AllProject" component={AllProject} />
             </Stack.Navigator>
         </NavigationContainer>
     );

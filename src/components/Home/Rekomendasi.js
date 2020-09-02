@@ -17,7 +17,7 @@ export default function Rekomendasi({ navigation }) {
         <View style={styles.Container}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={{ fontFamily: Poppins.Medium }}>Rekomendasi Project</Text>
-                <TouchableOpacity activeOpacity={0.6}>
+                <TouchableOpacity onPress={() => navigation.navigate('AllProject')} activeOpacity={0.6}>
                     <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Lihat Semua</Text>
                 </TouchableOpacity>
             </View>
