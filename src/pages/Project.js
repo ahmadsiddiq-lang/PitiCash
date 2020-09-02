@@ -21,7 +21,7 @@ const ProjectScreen = ({ navigation }) => {
 export default function Project({ navigation }) {
     return (
         <View style={styles.Container}>
-            <Header />
+            <Header navigation={navigation} />
             <Content content={[
                 <Banner />,
                 <ProjectTerbaru />,

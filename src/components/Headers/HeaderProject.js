@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
 
-export default function HeaderProject() {
+export default function HeaderProject({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Content}>
@@ -17,7 +17,7 @@ export default function HeaderProject() {
                 </View>
                 <View style={styles.BoxBell}>
                     <View style={styles.Circle} />
-                    <FontAwesome name="bell" color={color.background1} size={25} />
+                    <FontAwesome onPress={() => navigation.navigate('Notifikasi')} name="bell" color={color.background1} size={25} />
                 </View>
             </View>
         </View>

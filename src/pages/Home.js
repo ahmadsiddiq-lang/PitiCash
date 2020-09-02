@@ -30,7 +30,7 @@ const BoxCarousal = () => {
 export default function Home({ navigation }) {
     return (
         <View style={styles.Container}>
-            <Header />
+            <Header navigation={navigation} />
             <Content content={[
                 <PitiCash navigation={navigation} />,
                 <ActivitasTerbaru />,

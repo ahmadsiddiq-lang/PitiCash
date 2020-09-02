@@ -24,6 +24,9 @@ import KodeOtp from '../pages/KodeOtp';
 import SplashRegister from '../pages/SplashRegister';
 import ResetPass from '../pages/ResetPass';
 import SplashResset from '../pages/SplashResset';
+import Notifikasi from '../pages/Notifikasi';
+import BannerPromo from '../pages/BannerPromo';
+import DetailPromo from '../pages/DetailPromo';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -46,7 +49,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="LoginSplash">
+            <Stack.Navigator headerMode="none" initialRouteName="Tabs">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
@@ -65,6 +68,9 @@ export default function App() {
                 <Stack.Screen name="SplashRegister" component={SplashRegister} />
                 <Stack.Screen name="ResetPass" component={ResetPass} />
                 <Stack.Screen name="SplashResset" component={SplashResset} />
+                <Stack.Screen name="Notifikasi" component={Notifikasi} />
+                <Stack.Screen name="BannerPromo" component={BannerPromo} />
+                <Stack.Screen name="DetailPromo" component={DetailPromo} />
             </Stack.Navigator>
         </NavigationContainer>
     );

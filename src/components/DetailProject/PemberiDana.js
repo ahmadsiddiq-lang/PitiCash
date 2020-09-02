@@ -5,6 +5,12 @@ import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 
+const dataUser = [
+    { image: require('../../assets/images/users/User1.png') },
+    { image: require('../../assets/images/users/User2.png') },
+    { image: require('../../assets/images/users/User3.png') },
+    { image: require('../../assets/images/users/User4.png') },
+];
 
 export default function PemberiDana({ navigation, handleSheetActive }) {
     return (
@@ -17,11 +23,11 @@ export default function PemberiDana({ navigation, handleSheetActive }) {
             </View>
             <View style={styles.Content}>
                 {
-                    [1, 2, 3, 4, 5].map((item, index) => {
+                    dataUser.map((item, index) => {
                         return (
                             <View key={index} style={styles.BoxList}>
                                 <View style={styles.BoxAvatar}>
-                                    <Image style={{ resizeMode: 'contain', width: sizeWidth(10), height: sizeWidth(10) }} source={require('../../assets/images/User.png')} />
+                                    <Image style={{ resizeMode: 'contain', width: sizeWidth(10), height: sizeWidth(10) }} source={item.image} />
                                 </View>
                                 <View>
                                     <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Jhon Doe</Text>

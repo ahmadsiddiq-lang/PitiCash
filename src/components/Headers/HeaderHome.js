@@ -6,7 +6,7 @@ import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-export default function HeaderHome() {
+export default function HeaderHome({ navigation }) {
 
     const [ActiveCircle, setCircle] = useState(true);
 
@@ -24,7 +24,7 @@ export default function HeaderHome() {
                 </View>
                 <View style={{ marginTop: 5 }}>
                     <View style={styles.Circle} />
-                    <FontAwesome name="bell" color={color.background1} size={25} />
+                    <FontAwesome onPress={() => navigation.navigate('Notifikasi')} name="bell" color={color.background1} size={25} />
                 </View>
             </View>
         </View>
