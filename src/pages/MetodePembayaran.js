@@ -7,7 +7,7 @@ export default function MetodePembayaran({ navigation }) {
     return (
         <View style={styles.Container}>
             <HeaderMetode navigation={navigation} title={'Metode Pembayaran'} />
-            <Content />
+            <Content navigation={navigation} />
         </View>
     );
 }

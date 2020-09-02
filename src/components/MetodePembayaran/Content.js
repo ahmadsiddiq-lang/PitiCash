@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
@@ -23,7 +23,7 @@ const VirtualAccount = [
     { image: require('../../assets/images/MetodePembayaran/bni.png'), text: 'Bank BNI' },
 ];
 
-export default function Content() {
+export default function Content({ navigation }) {
     return (
         <View style={styles.Container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -31,18 +31,22 @@ export default function Content() {
                     <TamPlateList
                         title={'Saldo Piti Cash'}
                         dataSaldo={dataSaldoPiti}
+                        navigation={navigation}
                     />
                     <TamPlateList
                         title={'Pembayaran Instan'}
                         dataSaldo={PembayaranINstan}
+                        navigation={navigation}
                     />
                     <TamPlateList
                         title={'Virtual Account'}
                         dataSaldo={VirtualAccount}
+                        navigation={navigation}
                     />
                     <TamPlateList
                         title={'Transfer Bank'}
                         dataSaldo={VirtualAccount}
+                        navigation={navigation}
                     />
                 </View>
             </ScrollView>
@@ -50,7 +54,7 @@ export default function Content() {
     );
 }
 
-const TamPlateList = ({ dataSaldo = [], title }) => {
+const TamPlateList = ({ dataSaldo = [], title, navigation }) => {
     return (
         <View style={styles.Content}>
             <View style={styles.BoxHead}>
@@ -60,7 +64,7 @@ const TamPlateList = ({ dataSaldo = [], title }) => {
                 {
                     dataSaldo.map((item, index) => {
                         return (
-                            <View key={index} style={styles.BoxLIst}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Transfer')} key={index} style={styles.BoxLIst}>
                                 {
                                     item.cash ?
                                         <View style={styles.Avatar}>
@@ -74,7 +78,7 @@ const TamPlateList = ({ dataSaldo = [], title }) => {
 
                                         <Text style={{ color: color.fontBody2, fontSize: sizeFont(3.3) }}>{item.text}</Text>
                                 }
-                            </View>
+                            </TouchableOpacity>
                         );
                     })
                 }

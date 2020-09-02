@@ -48,13 +48,13 @@ export default function DetailProject({ navigation }) {
                     },
                 }}
             >
-                <ComponetSheet dataForSheet={dataSheet} />
+                <ComponetSheet refRBSheet={refRBSheet} navigation={navigation} dataForSheet={dataSheet} />
             </RBSheet>
         </View>
     );
 }
 
-const ComponetSheet = ({ dataForSheet }) => {
+const ComponetSheet = ({ dataForSheet, navigation, refRBSheet }) => {
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -89,7 +89,11 @@ const ComponetSheet = ({ dataForSheet }) => {
                 </View>
             </View>
             <View style={styles.BOxBtn}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('MetodePembayaran');
+                        refRBSheet.current.close();
+                    }} activeOpacity={0.6} style={styles.Btn}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5) }}>LANJUTKAN PEMBAYARAN</Text>
                 </TouchableOpacity>
             </View>
