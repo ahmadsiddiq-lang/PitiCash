@@ -5,12 +5,12 @@ import Header from '../components/Headers/HeaderMyProject';
 import Content from '../components/MyProject/Content';
 
 
-export default function MyProject() {
+export default function MyProject({ navigation }) {
     return (
         <View style={styles.Container}>
             <Header />
             <View style={styles.Content}>
-                <Content />
+                <Content navigation={navigation} />
             </View>
         </View>
     );

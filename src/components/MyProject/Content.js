@@ -17,7 +17,7 @@ const dataList = [
     { image: require('../../assets/images/Project3.png'), rp: '250.000.000', date: '10 Agustus 2020' },
 ];
 
-export default function Content() {
+export default function Content({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.head}>
@@ -36,7 +36,7 @@ export default function Content() {
                 {
                     dataList.map((item, index) => {
                         return (
-                            <View key={index} style={styles.BoxList}>
+                            <TouchableOpacity onPress={() => navigation.navigate('DetailMyProject')} key={index} style={styles.BoxList}>
                                 <View style={styles.BoxImage}>
                                     <Image style={{ resizeMode: 'stretch', width: '100%', height: '100%' }} source={item.image} />
                                 </View>
@@ -56,7 +56,7 @@ export default function Content() {
                                         <Text style={{ color: color.mainColor, fontSize: sizeFont(2.5) }}>Berhasil</Text>
                                     </TouchableOpacity>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         );
                     })
                 }
