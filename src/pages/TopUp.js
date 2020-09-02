@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import HeadTopUp from '../components/Headers/HeadTopUp';
 import PitiCash from '../components/TopUp/PitiCash';
 import History from '../components/TopUp/History';
+import { color } from '../assets/colors/color';
 
 export default function TopUp({ navigation }) {
     return (
@@ -17,5 +18,6 @@ export default function TopUp({ navigation }) {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
+        backgroundColor: color.background1,
     },
 });
