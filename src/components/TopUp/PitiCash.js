@@ -7,7 +7,7 @@ import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 import { Picker } from '@react-native-community/picker';
 
-export default function PitiCash() {
+export default function PitiCash({ navigation }) {
 
     const [valuePicker, setPicker] = useState('');
 
@@ -39,7 +39,7 @@ export default function PitiCash() {
                     </View>
                 </View>
                 <View style={styles.BoxBtn}>
-                    <Button color={color.mainColor} title="Top Up" />
+                    <Button onPress={() => navigation.navigate('TopUpSaldo')} color={color.mainColor} title="Top Up" />
                 </View>
             </View>
         </LinearGradient>

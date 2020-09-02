@@ -9,7 +9,7 @@ export default function TopUp({ navigation }) {
     return (
         <View style={styles.Container}>
             <HeadTopUp navigation={navigation} title={'Top Up'} />
-            <PitiCash />
+            <PitiCash navigation={navigation} />
             <History />
         </View>
     );
