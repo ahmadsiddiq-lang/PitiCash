@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { color } from '../assets/colors/color';
-import { SCREEN_WIDTH, sizeFont, SCREEN_HEIGHT, sizeWidth } from '../assets/responsive/Size';
+import { SCREEN_WIDTH, sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
 
 export default function Login({ navigation }) {
@@ -14,10 +14,10 @@ export default function Login({ navigation }) {
                 <Text style={styles.Title}>Piti Cash</Text>
             </View>
             <View style={styles.BoxBtn}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnUp}>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} activeOpacity={0.6} style={styles.BtnUp}>
                     <Text style={{ color: color.mainColor, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Log In</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnDown}>
+                <TouchableOpacity onPress={() => navigation.navigate('SignUp')} activeOpacity={0.6} style={styles.BtnDown}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Sign Up</Text>
                 </TouchableOpacity>
             </View>

@@ -8,7 +8,7 @@ import { sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
 
 
-export default function Login({ navigation }) {
+export default function ResetPass({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Head}>
@@ -18,40 +18,30 @@ export default function Login({ navigation }) {
                 <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
             </View>
             <Content content={[
-                <ContentLogin navigation={navigation} />,
+                <ContentSignUp navigation={navigation} />,
             ]} />
         </View>
     );
 }
 
-const ContentLogin = ({ navigation }) => {
+const ContentSignUp = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
-            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Log In</Text>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Resset Password</Text>
+            <Text style={{ color: color.fontBody2 }}>Masukkan email yang terdaftar, kami akan mengirimkan email verifikasi untuk mengatur ulang password</Text>
             <View style={styles.BoxInput}>
                 <View style={styles.BoxContentInput}>
-                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Username</Text>
+                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Email</Text>
                     <View style={styles.BoxInputItem}>
-                        <Image style={styles.IconInput} source={require('../assets/images/Login/user.png')} />
+                        <Image style={styles.IconInput} source={require('../assets/images/Login/mail.png')} />
                         <TextInput placeholder="Masukkan Username" style={styles.Input} />
                     </View>
                 </View>
-                <View style={styles.BoxContentInput}>
-                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Password</Text>
-                    <View style={styles.BoxInputItem}>
-                        <Image style={styles.IconInput} source={require('../assets/images/Login/lock.png')} />
-                        <TextInput secureTextEntry={true} placeholder="Masukkan Password" style={styles.Input} />
-                    </View>
-                </View>
             </View>
-            <TouchableOpacity activeOpacity={0.6}>
-                <Text onPress={() => navigation.navigate('ResetPass')} style={{ textAlign: 'right', fontSize: sizeFont(3.3) }}>Lupa Password ?</Text>
-            </TouchableOpacity>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('Splash')} activeOpacity={0.6} style={styles.BtnLogin}>
-                    <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Log In</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('SplashResset')} activeOpacity={0.6} style={styles.BtnLogin}>
+                    <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Kirim</Text>
                 </TouchableOpacity>
-                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Belum mempunyai akun ? <Text onPress={() => navigation.navigate('SignUp')} style={{ color: color.mainColor }}>SignUp</Text></Text>
             </View>
             <View />
         </View>

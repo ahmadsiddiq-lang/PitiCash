@@ -19,6 +19,11 @@ import Transfer from '../pages/Transfer';
 import DetailProject from '../pages/DetailProject';
 import LoginSplash from '../pages/LoginSplash';
 import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
+import KodeOtp from '../pages/KodeOtp';
+import SplashRegister from '../pages/SplashRegister';
+import ResetPass from '../pages/ResetPass';
+import SplashResset from '../pages/SplashResset';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -55,6 +60,11 @@ export default function App() {
                 <Stack.Screen name="DetailProject" component={DetailProject} />
                 <Stack.Screen name="LoginSplash" component={LoginSplash} />
                 <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="SignUp" component={SignUp} />
+                <Stack.Screen name="KodeOtp" component={KodeOtp} />
+                <Stack.Screen name="SplashRegister" component={SplashRegister} />
+                <Stack.Screen name="ResetPass" component={ResetPass} />
+                <Stack.Screen name="SplashResset" component={SplashResset} />
             </Stack.Navigator>
         </NavigationContainer>
     );
