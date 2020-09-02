@@ -1,14 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
 
 const data = [
-    { title: 'Urutkan', image: require('../../assets/images/MyProject/icon1.png') },
-    { title: 'Filter', image: require('../../assets/images/MyProject/icon2.png') },
-    { title: 'Kategory', image: require('../../assets/images/MyProject/icon3.png') },
+    { title: 'Semua' },
+    { title: 'Berhasil' },
+    { title: 'Pending' },
+    { title: 'Batal' },
 ];
 
 const dataList = [
@@ -18,15 +19,21 @@ const dataList = [
 ];
 
 export default function Content({ navigation }) {
+
+    const [indexOf, setIndex] = useState(0);
+
     return (
         <View style={styles.Container}>
             <View style={styles.head}>
                 {
                     data.map((item, index) => {
                         return (
-                            <TouchableOpacity activeOpacity={0.6} key={index} style={styles.BoxItem}>
-                                <Image style={styles.Image} source={item.image} />
-                                <Text>{item.title}</Text>
+                            <TouchableOpacity onPress={() => setIndex(index)} activeOpacity={0.6} key={index} style={[styles.BoxItem, indexOf === index && {
+                                borderBottomWidth: 2,
+                                borderColor: color.mainColor,
+                            },
+                            ]}>
+                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBlack }}>{item.title}</Text>
                             </TouchableOpacity>
                         );
                     })
@@ -68,25 +75,20 @@ export default function Content({ navigation }) {
 const styles = StyleSheet.create({
     Container: {
         // borderWidth: 1,
+        flex: 1,
     },
     head: {
         // borderWidth: 1,
         flexDirection: 'row',
+        borderBottomWidth: 0.5,
+        borderColor: color.border1,
     },
     BoxItem: {
-        borderWidth: 0.5,
-        borderColor: color.border1,
+        flex: 2,
         // height: sizeWidth(20),
-        flex: 3,
-        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
-    },
-    Image: {
-        resizeMode: 'contain',
-        width: sizeWidth(10),
-        height: sizeWidth(5),
     },
     Content: {
         // borderWidth: 1,
