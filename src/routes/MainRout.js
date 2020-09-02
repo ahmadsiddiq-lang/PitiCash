@@ -29,6 +29,7 @@ import BannerPromo from '../pages/BannerPromo';
 import DetailPromo from '../pages/DetailPromo';
 import DetailNotifikasi from '../pages/DetailNotifikasi';
 import DetailMyProject from '../pages/DetailMyProject';
+import History from '../pages/History';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -75,6 +76,7 @@ export default function App() {
                 <Stack.Screen name="DetailPromo" component={DetailPromo} />
                 <Stack.Screen name="DetailNotifikasi" component={DetailNotifikasi} />
                 <Stack.Screen name="DetailMyProject" component={DetailMyProject} />
+                <Stack.Screen name="History" component={History} />
             </Stack.Navigator>
         </NavigationContainer>
     );

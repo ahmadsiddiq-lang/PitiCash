@@ -27,7 +27,7 @@ export default function PitiCash({ navigation }) {
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Transfer.png')} />
                         <Text style={{ fontSize: sizeFont(3.5) }} > Transfer</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ alignItems: 'center' }} activeOpacity={0.6} >
+                    <TouchableOpacity onPress={() => navigation.navigate('History')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/History.png')} />
                         <Text style={{ fontSize: sizeFont(3.5) }}> History</Text>
                     </TouchableOpacity>
