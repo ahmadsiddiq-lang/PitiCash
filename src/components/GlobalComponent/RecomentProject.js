@@ -5,17 +5,12 @@ import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 
-const data = [
-    { image: require('../../assets/images/Project1.png'), persen: '40%', rp: '250.000.000', date: '30 Juli 2020' },
-    { image: require('../../assets/images/Project2.png'), persen: '30%', rp: '250.000.000', date: '01 Agustus 2020' },
-    { image: require('../../assets/images/Project3.png'), persen: '60%', rp: '250.000.000', date: '10 Agustus 2020' },
-];
-
-export default function Rekomendasi({ navigation }) {
+export default function Rekomendasi({ navigation, dataProject }) {
     return (
         <View style={styles.Container}>
             {
-                data.map((item, index) => {
+                dataProject &&
+                dataProject.map((item, index) => {
                     return (
                         <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('DetailProject')} key={index} style={styles.BoxList}>
                             <View style={styles.BoxImage}>
