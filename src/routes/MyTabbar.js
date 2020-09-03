@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, BackHandler, ToastAndroid, Platform } from 'react-native';
 import { color } from '../assets/colors/color';
 import { sizeWidth, sizeFont } from '../assets/responsive/Size';
 
@@ -51,6 +51,34 @@ export default function MyTabBar({ state, descriptors, navigation }) {
         width: sizeWidth(7),
         height: sizeWidth(7),
     };
+
+    let currentCount = 0;
+
+    const handleBack = () => {
+        if (currentCount < 1) {
+            currentCount += 1;
+            ToastAndroid.showWithGravity(
+                'Press again to close',
+                ToastAndroid.SHORT,
+                ToastAndroid.CENTER
+            );
+        } else {
+            // exit the app here using BackHandler.exitApp();
+            BackHandler.exitApp();
+        }
+        setTimeout(() => {
+            currentCount = 0;
+        }, 2000);
+    };
+
+
+    useEffect(() => {
+        const backHandler = BackHandler.addEventListener(
+            'hardwareBackPress',
+            handleBack
+        );
+        return () => backHandler.remove();
+    }, []);
 
     return (
         <View style={styles.Container}>
