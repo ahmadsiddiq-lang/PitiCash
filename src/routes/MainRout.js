@@ -33,6 +33,7 @@ import History from '../pages/History';
 import TopUpSaldo from '../pages/TopUpSaldo';
 import AllProject from '../pages/AllProject';
 import PemberiDana from '../pages/PemberiDana';
+import Search from '../pages/Search';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -83,6 +84,7 @@ export default function App() {
                 <Stack.Screen name="TopUpSaldo" component={TopUpSaldo} />
                 <Stack.Screen name="AllProject" component={AllProject} />
                 <Stack.Screen name="PemberiDana" component={PemberiDana} />
+                <Stack.Screen name="Search" component={Search} />
             </Stack.Navigator>
         </NavigationContainer>
     );

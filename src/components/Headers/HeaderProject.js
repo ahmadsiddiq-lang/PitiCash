@@ -1,5 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
@@ -9,12 +10,15 @@ export default function HeaderProject({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Content}>
-                <View style={styles.BoxInput}>
-                    <TextInput placeholder="Cari investasi apa ?" placeholderTextColor={color.fontWhite} style={styles.Input} />
+                <TouchableOpacity onPress={() => navigation.navigate('Search')} style={styles.BoxInput}>
+                    {/* <TextInput placeholder="Cari investasi apa ?" placeholderTextColor={color.fontWhite} style={styles.Input} /> */}
+                    <View style={{ width: '90%', paddingLeft: 20 }}>
+                        <Text style={{ color: color.fontWhite }}>Cari investasi apa</Text>
+                    </View>
                     <View style={styles.BoxSearch} activeOpacity={0.6}>
                         <Ionicons name="search" size={25} color={color.background1} />
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.BoxBell}>
                     <View style={styles.Circle} />
                     <FontAwesome onPress={() => navigation.navigate('Notifikasi')} name="bell" color={color.background1} size={25} />
@@ -45,6 +49,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.SearchColor,
         width: '90%',
         overflow: 'hidden',
+        paddingVertical: 5,
     },
     Input: {
         // borderWidth: 1,
