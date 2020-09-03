@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
@@ -22,10 +22,10 @@ export default function HeaderHome({ navigation }) {
                         <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(4) }}>Jhone Doe</Text>
                     </View>
                 </View>
-                <View style={{ marginTop: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Notifikasi')} style={{ marginTop: 5 }}>
                     <View style={styles.Circle} />
-                    <FontAwesome onPress={() => navigation.navigate('Notifikasi')} name="bell" color={color.background1} size={25} />
-                </View>
+                    <FontAwesome name="bell" color={color.background1} size={25} />
+                </TouchableOpacity>
             </View>
         </View>
     );
