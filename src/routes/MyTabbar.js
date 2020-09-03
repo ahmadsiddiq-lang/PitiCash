@@ -53,7 +53,20 @@ export default function MyTabBar({ state, descriptors, navigation }) {
     };
 
     let currentCount = 0;
-
+    const useDoubleBackPressExit = (
+        exitHandler: () => void
+    ) => {
+        if (Platform.OS === 'ios') { return; }
+        const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+            if (currentCount === 1) {
+                exitHandler();
+                subscription.remove();
+                return true;
+            }
+            handleBack();
+            return true;
+        });
+    };
     const handleBack = () => {
         if (currentCount < 1) {
             currentCount += 1;
@@ -73,11 +86,10 @@ export default function MyTabBar({ state, descriptors, navigation }) {
 
 
     useEffect(() => {
-        const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            handleBack
-        );
-        return () => backHandler.remove();
+        BackHandler.addEventListener('hardwareBackPress', useDoubleBackPressExit);
+        return () => {
+            BackHandler.removeEventListener('hardwareBackPress', useDoubleBackPressExit);
+        };
     }, []);
 
     return (
