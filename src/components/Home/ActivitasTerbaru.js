@@ -1,52 +1,29 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { sizeWidth, SCREEN_WIDTH, sizeFont } from '../../assets/responsive/Size';
+import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
-import {
-    LineChart,
-    BarChart,
-    PieChart,
-    ProgressChart,
-    ContributionGraph,
-    StackedBarChart,
-} from 'react-native-chart-kit';
+import Pie from 'react-native-pie';
+import { LineChart } from 'react-native-chart-kit';
 import { color } from '../../assets/colors/color';
-
-const data = [
-    { image: require('../../assets/images/icon1.png'), color: '#a99cff', title: 'Referral Bonus', qty: '18.00' },
-    { image: require('../../assets/images/icon2.png'), color: '#ff9494', title: 'Pairing Bonus', qty: '13.00' },
-    { image: require('../../assets/images/icon3.png'), color: '#ff94bd', title: 'Limit Bonus', qty: '346.95' },
-    { image: require('../../assets/images/icon4.png'), color: '#94c6ff', title: 'Total Bonus', qty: '42.65' },
-    { image: require('../../assets/images/icon5.png'), color: '#94ff96', title: 'Bonus Bayar', qty: '52.00' },
-    { image: require('../../assets/images/icon6.png'), color: '#ffda94', title: 'Profit', qty: '11.65' },
-];
 
 export default function ActivitasTerbaru() {
 
-    const [LimitBonus, setLimit] = useState(250);
-    const [dataLimitChart, setDataChat] = useState(0);
-
-    const handleLimit = (dataLimitInput) => {
-        const total = dataLimitInput / LimitBonus;
-        setDataChat(total);
-    };
-
-    useEffect(() => {
-        handleLimit(60);
-    }, []);
-
     return (
         <View style={styles.Container}>
-            <Text style={{ paddingVertical: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Riwayat Bonus</Text>
+            <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Riwayat Bonus</Text>
             <View style={styles.Content}>
                 <View style={styles.BoxRiwayat}>
-                    <View style={styles.BoxItemRiwayat}>
-                        <View style={styles.Circle} />
-                        <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Bold, color: color.fontBody2 }}>40.00</Text>
-                        <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Total bonus</Text>
-                        <View style={styles.BOxChart}>
-                            <ChartRiwayat />
+                    <View style={[styles.BoxItemRiwayat, { paddingRight: 20 }]}>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+                            <View style={{ marginLeft: 10, marginTop: 10 }}>
+                                <View style={styles.Circle} />
+                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Bold, color: color.fontBody2 }}>40.00</Text>
+                                <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Total bonus</Text>
+                            </View>
+                            <View style={styles.BOxChart}>
+                                <ChartRiwayat />
+                            </View>
                         </View>
                     </View>
                     <View style={styles.BoxItemRiwayat}>
@@ -67,21 +44,9 @@ export default function ActivitasTerbaru() {
                     </View>
                 </View>
                 <View>
-                    <Text style={{ paddingVertical: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Activitas Bonus</Text>
+                    <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5), marginTop: 15 }}>Activitas Bonus</Text>
                     <View style={styles.BoxActivitas}>
-                        <View style={{ flex: 2 }}>
-                            <View style={styles.BoxListActivitas}>
-                                <View style={{ marginBottom: 20 }}>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                        <View style={styles.Circle} />
-                                        <View>
-                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Bold, color: color.fontBody2, marginLeft: 10 }}>13.00</Text>
-
-                                        </View>
-                                    </View>
-                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Pairing Bonus</Text>
-                                </View>
-                            </View>
+                        <View style={{ flex: 2, flexDirection: 'column', justifyContent: 'space-between' }}>
                             <View style={styles.BoxListActivitas}>
                                 <View>
                                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -91,14 +56,24 @@ export default function ActivitasTerbaru() {
 
                                         </View>
                                     </View>
-                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Pairing Bonus</Text>
+                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Bonus Terbayar</Text>
                                 </View>
                             </View>
+                            <View style={styles.BoxListActivitas}>
+                                <View >
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <View style={styles.Circle} />
+                                        <View>
+                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Bold, color: color.fontBody2, marginLeft: 10 }}>13.00</Text>
 
+                                        </View>
+                                    </View>
+                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Profit</Text>
+                                </View>
+                            </View>
                         </View>
-                        <View style={{ flex: 2 }}>
-                            <ChartActivitas dataLimitChart={dataLimitChart} />
-                            <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Limit Bonu <Text style={{ color: color.fontBlack, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>{LimitBonus}</Text></Text>
+                        <View style={{ flex: 2, alignItems: 'center' }}>
+                            <ChartActivitas />
                         </View>
                     </View>
                 </View>
@@ -125,8 +100,8 @@ const ChartRiwayat = () => {
                     },
                 ],
             }}
-            width={sizeWidth(45)} // from react-native
-            height={sizeWidth(18)}
+            width={sizeWidth(55)} // from react-native
+            height={sizeWidth(25)}
             // yAxisLabel={'Rp'}
             withVerticalLabels={false}
             withHorizontalLabels={false}
@@ -150,41 +125,37 @@ const ChartRiwayat = () => {
                 marginVertical: 8,
                 borderRadius: 8,
                 marginLeft: -50,
+                marginBottom: -2,
             }}
         />
     );
 };
 
-const ChartActivitas = ({ dataLimitChart }) => {
+const ChartActivitas = () => {
     return (
-        <ProgressChart
-            data={
-                {
-                    // labels: ['Caca'],
-                    data: [dataLimitChart],
-                }
-            }
-            width={sizeWidth(40)} // from react-native
-            height={sizeWidth(19)}
-            chartConfig={
-                {
-                    backgroundGradientFrom: color.background1,
-                    backgroundGradientFromOpacity: 1,
-                    backgroundGradientTo: color.background1,
-                    backgroundGradientToOpacity: 0.5,
-                    color: (opacity = 1) => `rgba(0, 220, 255, ${opacity})`,
-                    strokeWidth: 1, // optional, default 3
-                }
-            }
-            backgroundColor={color.mainColor}
-            // paddingLeft="15"
-            absolute
-            style={{
-                marginVertical: 8,
-                borderRadius: 16,
-                marginLeft: -20,
-            }}
-        />
+        <View style={styles.BoxChartActivitas}>
+            <Pie
+                radius={sizeWidth(30) / 2}
+                innerRadius={55}
+                sections={[
+                    {
+                        percentage: 70,
+                        color: color.mainColor,
+                    },
+                ]}
+                backgroundColor="#ddd"
+            />
+            <View
+                style={styles.gauge}
+            >
+                <Text
+                    style={styles.gaugeText}
+                >
+                    250.00
+                </Text>
+                <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Limit Bonus</Text>
+            </View>
+        </View>
     );
 };
 
@@ -220,7 +191,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-        // backgroundColor: color.background3,
+        backgroundColor: '#f5f5f5',
+        borderRadius: 8,
+        padding: 15,
     },
     BOxChart: {
         // borderWidth: 1,
@@ -230,10 +203,36 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        backgroundColor: '#f5f5f5',
+        borderRadius: 8,
+        paddingVertical: 15,
     },
     BoxListActivitas: {
         flexDirection: 'row',
         // paddingVertical: 10,
         // borderWidth: 1,
+        padding: 5,
+        borderRadius: 8,
+        marginRight: 10,
+    },
+    BoxChartActivitas: {
+        width: sizeWidth(30),
+        alignItems: 'center',
+        justifyContent: 'center',
+        // borderWidth: 1,
+    },
+    gauge: {
+        // borderWidth: 1,
+        position: 'absolute',
+        width: 100,
+        height: 160,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    gaugeText: {
+        backgroundColor: 'transparent',
+        color: color.fontBody2,
+        fontFamily: Poppins.Medium,
+        fontSize: 24,
     },
 });
