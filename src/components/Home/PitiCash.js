@@ -16,7 +16,7 @@ export default function PitiCash({ navigation }) {
                         </View>
                         <Text style={{ lineHeight: 20 }}>Piti Cash</Text>
                     </View>
-                    <Text style={{ lineHeight: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>PTC. 1.000</Text>
+                    <Text style={{ lineHeight: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>1.000 PTC</Text>
                 </View>
                 <View style={styles.BoxBootom}>
                     <TouchableOpacity onPress={() => navigation.navigate('TopUp')} style={{ alignItems: 'center' }} activeOpacity={0.6} >

@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     BoxLineLeft: {
         borderRightWidth: 1,
         borderColor: color.mainColor,
-        height: sizeWidth(10),
+        height: sizeWidth(8),
         flex: 2,
     },
     BoxLineCenter: {
@@ -221,13 +221,13 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderTopWidth: 2,
         borderColor: color.mainColor,
-        height: sizeWidth(10),
+        height: sizeWidth(8),
         flex: 4,
     },
     BoxLineRight: {
         borderLeftWidth: 1,
         borderColor: color.mainColor,
-        height: sizeWidth(10),
+        height: sizeWidth(8),
         flex: 2,
     },
     BoxLineCenter2: {
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         // borderBottomWidth: 1,
         borderColor: color.mainColor,
-        height: sizeWidth(10),
+        height: sizeWidth(8),
         flex: 4,
     },
     BoxLineCenterA: {
@@ -248,9 +248,9 @@ const styles = StyleSheet.create({
     BoxLineCenterB: {
         flex: 4,
         // borderTopWidth: 2,
-        // borderLeftWidth: 1,
-        // borderRightWidth: 1,
-        // borderColor: color.mainColor,
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
+        borderColor: color.mainColor,
     },
     BoxLineCenterC: {
         flex: 4,

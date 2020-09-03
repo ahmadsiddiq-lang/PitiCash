@@ -33,7 +33,7 @@ export default function Content({ navigation }) {
                                 borderColor: color.mainColor,
                             },
                             ]}>
-                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBlack }}>{item.title}</Text>
+                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBody2 }}>{item.title}</Text>
                             </TouchableOpacity>
                         );
                     })
@@ -49,7 +49,7 @@ export default function Content({ navigation }) {
                                 </View>
                                 <View style={styles.BoxContentRight}>
                                     <View style={styles.BoxText}>
-                                        <Text style={{ fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>
+                                        <Text style={{ fontFamily: Poppins.Medium }}>Bersama membangun Smarty Mart</Text>
                                         <View style={styles.BoxPrice}>
                                             <View style={styles.boxTgl}>
                                                 <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>{item.date}</Text>
