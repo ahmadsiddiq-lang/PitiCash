@@ -6,6 +6,7 @@ import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 
 export default function SignUp({ navigation }) {
@@ -38,10 +39,10 @@ const ContentSignUp = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('SplashRegister')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('SplashRegister'))} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Sign Up</Text>
                 </TouchableOpacity>
-                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Sudah mempunyai akun ? <Text onPress={() => navigation.navigate('Login')} style={{ color: color.mainColor }}>Login</Text></Text>
+                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Sudah mempunyai akun ? <Text onPress={() => navigation.dispatch(StackActions.replace('Login'))} style={{ color: color.mainColor }}>Login</Text></Text>
             </View>
             <View />
         </View>

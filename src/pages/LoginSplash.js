@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react
 import { color } from '../assets/colors/color';
 import { SCREEN_WIDTH, sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 export default function Login({ navigation }) {
     return (
@@ -14,10 +15,10 @@ export default function Login({ navigation }) {
                 <Text style={styles.Title}>Piti Cash</Text>
             </View>
             <View style={styles.BoxBtn}>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} activeOpacity={0.6} style={styles.BtnUp}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('Login'))} activeOpacity={0.6} style={styles.BtnUp}>
                     <Text style={{ color: color.mainColor, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Log In</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp')} activeOpacity={0.6} style={styles.BtnDown}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('SignUp'))} activeOpacity={0.6} style={styles.BtnDown}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(4), fontFamily: Poppins.Bold }}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
