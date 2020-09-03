@@ -6,6 +6,7 @@ import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 
 export default function Login({ navigation }) {
@@ -48,7 +49,7 @@ const ContentLogin = ({ navigation }) => {
                 <Text onPress={() => navigation.navigate('ResetPass')} style={{ textAlign: 'right', fontSize: sizeFont(3.3) }}>Lupa Password ?</Text>
             </TouchableOpacity>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('Tabs'))} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Log In</Text>
                 </TouchableOpacity>
                 <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Belum mempunyai akun ? <Text onPress={() => navigation.navigate('SignUp')} style={{ color: color.mainColor }}>SignUp</Text></Text>

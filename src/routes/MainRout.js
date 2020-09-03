@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { StatusBar } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, BackHandler, ToastAndroid, Platform, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -40,6 +40,41 @@ import { color } from '../assets/colors/color';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+    let currentCount = 0;
+    const useDoubleBackPressExit = () => {
+        const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+            console.log('masuk');
+            if (currentCount === 1) {
+                subscription.remove();
+                BackHandler.exitApp();
+                return true;
+            }
+            handleBack();
+            return true;
+        });
+    };
+    const handleBack = () => {
+        if (currentCount < 1) {
+            currentCount += 1;
+            ToastAndroid.showWithGravity(
+                'Press again to close',
+                ToastAndroid.SHORT,
+                ToastAndroid.CENTER
+            );
+        } else {
+            // exit the app here using BackHandler.exitApp();
+        }
+        setTimeout(() => {
+            currentCount = 0;
+        }, 2000);
+    };
+
+    useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', useDoubleBackPressExit);
+        return () => {
+            BackHandler.removeEventListener('hardwareBackPress', useDoubleBackPressExit);
+        };
+    }, []);
     return (
         <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen name="Home" component={Home} />

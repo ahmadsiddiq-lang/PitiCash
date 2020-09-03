@@ -52,46 +52,6 @@ export default function MyTabBar({ state, descriptors, navigation }) {
         height: sizeWidth(7),
     };
 
-    let currentCount = 0;
-    const useDoubleBackPressExit = (
-        exitHandler: () => void
-    ) => {
-        if (Platform.OS === 'ios') { return; }
-        const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-            if (currentCount === 1) {
-                exitHandler();
-                subscription.remove();
-                return true;
-            }
-            handleBack();
-            return true;
-        });
-    };
-    const handleBack = () => {
-        if (currentCount < 1) {
-            currentCount += 1;
-            ToastAndroid.showWithGravity(
-                'Press again to close',
-                ToastAndroid.SHORT,
-                ToastAndroid.CENTER
-            );
-        } else {
-            // exit the app here using BackHandler.exitApp();
-            BackHandler.exitApp();
-        }
-        setTimeout(() => {
-            currentCount = 0;
-        }, 2000);
-    };
-
-
-    useEffect(() => {
-        BackHandler.addEventListener('hardwareBackPress', useDoubleBackPressExit);
-        return () => {
-            BackHandler.removeEventListener('hardwareBackPress', useDoubleBackPressExit);
-        };
-    }, []);
-
     return (
         <View style={styles.Container}>
             {
