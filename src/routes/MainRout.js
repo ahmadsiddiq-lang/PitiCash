@@ -55,7 +55,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="Tabs">
+            <Stack.Navigator headerMode="none" initialRouteName="Splash">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />

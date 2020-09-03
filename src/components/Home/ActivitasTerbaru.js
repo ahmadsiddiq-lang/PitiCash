@@ -18,7 +18,7 @@ export default function ActivitasTerbaru() {
                         <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8 }}>
                             <View style={{ marginLeft: 10, marginTop: 10 }}>
                                 <View style={styles.Circle} />
-                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBody2 }}>40.00</Text>
+                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>40.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Total bonus</Text>
                             </View>
                             <View style={styles.BOxChart}>
@@ -29,14 +29,14 @@ export default function ActivitasTerbaru() {
                     <View style={styles.BoxItemRiwayat}>
                         <View style={styles.BoxRightRiwayat}>
                             <View>
-                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBody2 }}>13.00</Text>
+                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>13.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Pairing Bonus</Text>
                             </View>
                             <Image style={{ resizeMode: 'contain', width: sizeWidth(9), height: sizeWidth(9) }} source={require('../../assets/images/PairingBonus.png')} />
                         </View>
                         <View style={styles.BoxRightRiwayat}>
                             <View>
-                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBody2 }}>27.00</Text>
+                                <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>27.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Refferal Bonus</Text>
                             </View>
                             <Image style={{ resizeMode: 'contain', width: sizeWidth(9), height: sizeWidth(9) }} source={require('../../assets/images/RefferalBonus.png')} />
@@ -52,7 +52,7 @@ export default function ActivitasTerbaru() {
                                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                         <View style={styles.Circle} />
                                         <View>
-                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBody2, marginLeft: 10 }}>13.70</Text>
+                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack, marginLeft: 10 }}>13.70</Text>
 
                                         </View>
                                     </View>
@@ -64,7 +64,7 @@ export default function ActivitasTerbaru() {
                                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                         <View style={styles.Circle} />
                                         <View>
-                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBody2, marginLeft: 10 }}>64.00</Text>
+                                            <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack, marginLeft: 10 }}>64.00</Text>
 
                                         </View>
                                     </View>
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     },
     gaugeText: {
         backgroundColor: 'transparent',
-        color: color.fontBody2,
+        color: color.fontBlack,
         fontFamily: Poppins.Medium,
         fontSize: sizeFont(5),
     },

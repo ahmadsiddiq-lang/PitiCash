@@ -48,7 +48,7 @@ const ContentLogin = ({ navigation }) => {
                 <Text onPress={() => navigation.navigate('ResetPass')} style={{ textAlign: 'right', fontSize: sizeFont(3.3) }}>Lupa Password ?</Text>
             </TouchableOpacity>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('Splash')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Log In</Text>
                 </TouchableOpacity>
                 <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Belum mempunyai akun ? <Text onPress={() => navigation.navigate('SignUp')} style={{ color: color.mainColor }}>SignUp</Text></Text>

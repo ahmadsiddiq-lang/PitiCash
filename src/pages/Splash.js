@@ -101,12 +101,12 @@ export default class Splash extends React.Component {
                         }
                     </View>
                     <View style={styles.BoxBtn}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
-                            <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Skip</Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginSplash')} activeOpacity={0.6} style={styles.BtnSkip}>
+                            <Text style={{ color: color.fontBody2, fontFamily: Poppins.Medium }}>Skip</Text>
                         </TouchableOpacity>
                         {
                             this.state.indexOf === data.length - 1 ?
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginSplash')} activeOpacity={0.6} style={styles.Btn}>
                                     <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Start</Text>
                                 </TouchableOpacity> :
                                 <TouchableOpacity onPress={() => this._handleNext()} activeOpacity={0.6} style={styles.Btn}>
@@ -176,8 +176,12 @@ const styles = StyleSheet.create({
         backgroundColor: color.mainColor,
         paddingHorizontal: 20,
         paddingVertical: 3,
-        borderRadius: 10,
+        borderRadius: 20,
         marginLeft: 15,
+    },
+    BtnSkip: {
+        paddingHorizontal: 20,
+        paddingVertical: 3,
     },
     BoxBtn: {
         flexDirection: 'row',
