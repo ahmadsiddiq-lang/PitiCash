@@ -43,7 +43,6 @@ function MyTabs() {
     let currentCount = 0;
     const useDoubleBackPressExit = () => {
         const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-            console.log('masuk');
             if (currentCount === 1) {
                 subscription.remove();
                 BackHandler.exitApp();
@@ -88,6 +87,40 @@ function MyTabs() {
 const Stack = createStackNavigator();
 
 export default function App() {
+    let currentCount = 0;
+    const useDoubleBackPressExit = () => {
+        const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+            if (currentCount === 1) {
+                subscription.remove();
+                BackHandler.exitApp();
+                return true;
+            }
+            handleBack();
+            return true;
+        });
+    };
+    const handleBack = () => {
+        if (currentCount < 1) {
+            currentCount += 1;
+            ToastAndroid.showWithGravity(
+                'Press again to close',
+                ToastAndroid.SHORT,
+                ToastAndroid.CENTER
+            );
+        } else {
+            // exit the app here using BackHandler.exitApp();
+        }
+        setTimeout(() => {
+            currentCount = 0;
+        }, 2000);
+    };
+
+    useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', useDoubleBackPressExit);
+        return () => {
+            BackHandler.removeEventListener('hardwareBackPress', useDoubleBackPressExit);
+        };
+    }, []);
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
