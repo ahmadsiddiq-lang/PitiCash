@@ -179,7 +179,7 @@ export default function Registrasi() {
                                                                 </View>
                                                             </> :
                                                             <TouchableOpacity style={styles.BtnAdd}>
-                                                                <Text style={{ color: color.fontWhite }}>Add</Text>
+                                                                <Text style={{ color: color.fontWhite, fontSize: sizeFont(3) }}>Add</Text>
                                                             </TouchableOpacity>
                                                     }
                                                 </View>
@@ -329,7 +329,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
         marginTop: 20,
         marginBottom: 5,
     },

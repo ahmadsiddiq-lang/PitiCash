@@ -7,7 +7,7 @@ import { Poppins } from '../assets/fonts/Poppins';
 import { StackActions } from '@react-navigation/native';
 
 const data = [
-    { image: require('../assets/images/splash/Gambar1.png'), title: 'Daftar Geratis', text: 'Pendaftaran Geratis. Tidak perlu mengeluarkan uang sedikitpun' },
+    { image: require('../assets/images/splash/Gambar1.png'), title: 'Daftar Gratis', text: 'Pendaftaran Gratis. Tidak perlu mengeluarkan uang sedikitpun' },
     { image: require('../assets/images/splash/Gambar2.png'), title: 'Profit Besar', text: 'Anda dapat berinfestasi dengan resiko kecil dan profit besar' },
     { image: require('../assets/images/splash/Gambar3.png'), title: 'Investasi Aman', text: 'Tidak perlu takut berinvestasi, kami menjamin uang anda kembali' },
 ];

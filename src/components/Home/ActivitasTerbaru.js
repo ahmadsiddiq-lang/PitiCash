@@ -11,7 +11,7 @@ export default function ActivitasTerbaru() {
 
     return (
         <View style={styles.Container}>
-            <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Riwayat Bonus</Text>
+            <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Developer Fee</Text>
             <View style={styles.Content}>
                 <View style={styles.BoxRiwayat}>
                     <View style={[styles.BoxItemRiwayat, { paddingRight: 20 }]}>
@@ -44,7 +44,7 @@ export default function ActivitasTerbaru() {
                     </View>
                 </View>
                 <View>
-                    <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5), marginTop: 15 }}>Activitas Bonus</Text>
+                    <Text style={{ paddingVertical: 5, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5), marginTop: 15 }}>Profit Sharing</Text>
                     <View style={styles.BoxActivitas}>
                         <View style={{ flex: 2, flexDirection: 'column', justifyContent: 'space-between' }}>
                             <View style={styles.BoxListActivitas}>
@@ -68,7 +68,7 @@ export default function ActivitasTerbaru() {
 
                                         </View>
                                     </View>
-                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Totla Top Up</Text>
+                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Total Top Up</Text>
                                 </View>
                             </View>
                         </View>
