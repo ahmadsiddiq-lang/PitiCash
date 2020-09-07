@@ -330,6 +330,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
         paddingHorizontal: 20,
-        marginTop: 25,
+        marginTop: 20,
+        marginBottom: 5,
     },
 });
