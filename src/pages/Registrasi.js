@@ -1,11 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, ScrollView, CheckBox, Button } from 'react-native';
 import Header from '../components/Headers/HeaderMetode';
 import { color } from '../assets/colors/color';
 import { Poppins } from '../assets/fonts/Poppins';
-import { sizeFont } from '../assets/responsive/Size';
+import { sizeFont, SCREEN_WIDTH } from '../assets/responsive/Size';
 
 export default function Registrasi({ navigation }) {
+    const [isSelected, setSelection] = useState(false);
     return (
         <View style={styles.Container}>
             <Header navigation={navigation} title={'Registrasi Developer'} />
@@ -27,7 +28,7 @@ export default function Registrasi({ navigation }) {
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Piti Cash</Text>
-                        <TextInput placeholder="Nominal" value={'100.000'} style={styles.Input} />
+                        <TextInput keyboardType="numeric" placeholder="Nominal" style={styles.Input} />
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Username</Text>
@@ -39,16 +40,29 @@ export default function Registrasi({ navigation }) {
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>No. Handphone</Text>
-                        <TextInput placeholder="Masukkan nomor handphone" style={styles.Input} />
+                        <TextInput keyboardType="phone-pad" placeholder="Masukkan nomor handphone" style={styles.Input} />
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Email</Text>
-                        <TextInput placeholder="Masukkan email" style={styles.Input} />
+                        <TextInput autoCapitalize="none" keyboardType="email-address" placeholder="Masukkan email" style={styles.Input} />
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Bank Account</Text>
                         <TextInput placeholder="Masukkan rekening bank" style={styles.Input} />
                     </View>
+                    <View style={styles.BoxCheckBox}>
+                        <CheckBox
+                            value={isSelected}
+                            onValueChange={setSelection}
+                            style={styles.checkbox}
+                        />
+                        <View style={styles.BoxSyarat}>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Saya menyetutjui <Text style={{ color: color.mainColor }}>Syarat & ketentuan </Text>yang berlaku</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.BoxBtn}>
+                    <Button title="Simpan" color={color.mainColor} />
                 </View>
             </ScrollView>
         </View>
@@ -91,5 +105,25 @@ const styles = StyleSheet.create({
         letterSpacing: 1,
         fontSize: sizeFont(3.5),
         // fontFamily: Poppins.Medium,
+    },
+    BoxCheckBox: {
+        // borderWidth: 1,
+        width: SCREEN_WIDTH - 40,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
+    BoxSyarat: {
+        display: 'flex',
+        // flex: 1,
+        flexWrap: 'nowrap',
+        width: '90%',
+        // borderWidth: 1,
+        marginLeft: 10,
+    },
+    BoxBtn: {
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        marginTop: 20,
     },
 });
