@@ -15,7 +15,7 @@ export default function ActivitasTerbaru() {
             <View style={styles.Content}>
                 <View style={styles.BoxRiwayat}>
                     <View style={[styles.BoxItemRiwayat, { paddingRight: 20 }]}>
-                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: 10 }}>
                             <View style={{ marginLeft: 10, marginTop: 10 }}>
                                 <View style={styles.Circle} />
                                 <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>40.00</Text>
@@ -56,7 +56,7 @@ export default function ActivitasTerbaru() {
 
                                         </View>
                                     </View>
-                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Bonus Terbayar</Text>
+                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Jumlah PTC</Text>
                                 </View>
                             </View>
                             <View style={styles.BoxListActivitas}>
@@ -68,7 +68,7 @@ export default function ActivitasTerbaru() {
 
                                         </View>
                                     </View>
-                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Profit</Text>
+                                    <Text style={{ fontSize: sizeFont(3), color: color.fontBody2, marginLeft: 20 }}>Totla Top Up</Text>
                                 </View>
                             </View>
                         </View>
@@ -100,8 +100,8 @@ const ChartRiwayat = () => {
                     },
                 ],
             }}
-            width={sizeWidth(60)} // from react-native
-            height={sizeWidth(25)}
+            width={sizeWidth(55)} // from react-native
+            height={sizeWidth(20)}
             // yAxisLabel={'Rp'}
             withVerticalLabels={false}
             withHorizontalLabels={false}
@@ -153,7 +153,7 @@ const ChartActivitas = () => {
                 >
                     250.00
                 </Text>
-                <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Limit Bonus</Text>
+                <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Limit Profit</Text>
             </View>
         </View>
     );

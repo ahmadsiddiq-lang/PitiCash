@@ -16,12 +16,16 @@ export default function PitiCash({ navigation }) {
                         </View>
                         <Text style={{ lineHeight: 20 }}>Piti Cash</Text>
                     </View>
-                    <Text style={{ lineHeight: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>1.000 PTC</Text>
+                    <Text style={{ lineHeight: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>Rp. 2.800.000</Text>
                 </View>
                 <View style={styles.BoxBootom}>
                     <TouchableOpacity onPress={() => navigation.navigate('TopUp')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/TopUp.png')} />
                         <Text style={{ fontSize: sizeFont(3.5) }}>Top Up</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Registrasi')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
+                        <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Registrasi.png')} />
+                        <Text style={{ fontSize: sizeFont(3.5) }}>Registrasi</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Transfer')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Transfer.png')} />
