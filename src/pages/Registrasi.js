@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     Input: {
         // borderWidth: 1,
         padding: 0,
-        letterSpacing: 1,
+        letterSpacing: 0.5,
         fontSize: sizeFont(3.5),
         // fontFamily: Poppins.Medium,
     },

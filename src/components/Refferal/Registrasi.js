@@ -1,11 +1,27 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useRef, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { color } from '../../assets/colors/color';
 import { sizeFont, sizeWidth, sizeHeight } from '../../assets/responsive/Size';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import { Poppins } from '../../assets/fonts/Poppins';
+
+const data = [
+    {
+        Utama: 'User 1',
+        sub1: [
+            { user: 'User 2', posisi: 0 },
+            { user: 'User 3', posisi: 1 },
+        ],
+        sub2: [
+            { user: '', posisi: 0 },
+            { user: '', posisi: 0 },
+            { user: 'User 6', posisi: 1 },
+            { user: 'User 7', posisi: 1 },
+        ],
+    },
+];
 
 
 export default function Registrasi() {
@@ -72,39 +88,14 @@ export default function Registrasi() {
 
     return (
         <View style={styles.Container}>
-            <View style={styles.Content1}>
-                <TouchableOpacity onPress={() => handleSheetActive()} activeOpacity={0.6} style={styles.BoxUser}>
-                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
-                    <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <View style={{ flexDirection: 'row', padding: 3 }}>
-                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
-                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', padding: 3 }}>
-                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
-                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.BoxContentLine}>
-                <View style={styles.BoxLineLeft} />
-                <View style={styles.BoxLineRight} />
-            </View>
-            <View style={styles.BoxContentLine}>
-                <View style={styles.BoxLineLeft} />
-                <View style={styles.BoxLineCenter} />
-                <View style={styles.BoxLineRight} />
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                {
-                    [1, 2].map((item, index) => {
-                        return (
-                            <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} key={index} style={styles.BoxList}>
-                                <View style={styles.BoxUser}>
+            {
+                data.map((item, index) => {
+                    return (
+                        <SafeAreaView key={index}>
+                            <View style={styles.Content1}>
+                                <View activeOpacity={0.6} style={styles.BoxUser}>
                                     <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
-                                    <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
+                                    <Text style={{ fontSize: sizeFont(3) }}>{item.Utama}</Text>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
                                             <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
@@ -115,48 +106,92 @@ export default function Registrasi() {
                                             <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                         </View>
                                     </View>
+                                    <TouchableOpacity onPress={() => handleSheetActive()} style={styles.BtnDetail}>
+                                        <Text style={{ color: color.fontWhite }}>Detail</Text>
+                                    </TouchableOpacity>
                                 </View>
-                            </TouchableOpacity>
-                        );
-                    })
-                }
-            </View>
-            <View style={styles.BoxContentLine}>
-                <View style={styles.BoxLineLeft} />
-                <View style={styles.BoxLineCenter2} />
-                <View style={styles.BoxLineRight} />
-            </View>
-            <View style={styles.BoxContentLine}>
-                <View style={styles.BoxLineLeft} />
-                <View style={styles.BoxLineCenterA} />
-                <View style={styles.BoxLineCenterB} />
-                <View style={styles.BoxLineCenterC} />
-                <View style={styles.BoxLineRight} />
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                {
-                    [1, 2, 3, 4].map((item, index) => {
-                        return (
-                            <TouchableOpacity onPress={() => handleSheetActive(index)} key={index} activeOpacity={0.6} style={styles.BoxList}>
-                                <View style={styles.BoxUser}>
-                                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
-                                    <Text style={{ fontSize: sizeFont(3) }}>User 1</Text>
-                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                        <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
-                                        </View>
-                                        <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
-                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        );
-                    })
-                }
-            </View>
+                            </View>
+                            <View style={styles.BoxContentLine}>
+                                <View style={styles.BoxLineLeft} />
+                                <View style={styles.BoxLineRight} />
+                            </View>
+                            <View style={styles.BoxContentLine}>
+                                <View style={styles.BoxLineLeft} />
+                                <View style={styles.BoxLineCenter} />
+                                <View style={styles.BoxLineRight} />
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                {
+                                    item.sub1.map((itemSub1, indexSub1) => {
+                                        return (
+                                            <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} key={indexSub1} style={styles.BoxList}>
+                                                <View style={styles.BoxUser}>
+                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
+                                                    <Text style={{ fontSize: sizeFont(3) }}>{itemSub1.user}</Text>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                        <View style={{ flexDirection: 'row', padding: 3 }}>
+                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
+                                                        </View>
+                                                        <View style={{ flexDirection: 'row', padding: 3 }}>
+                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                            <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
+                                                        </View>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                        );
+                                    })
+                                }
+                            </View>
+                            <View style={styles.BoxContentLine}>
+                                <View style={styles.BoxLineLeft} />
+                                <View style={styles.BoxLineCenter2} />
+                                <View style={styles.BoxLineRight} />
+                            </View>
+                            <View style={styles.BoxContentLine}>
+                                <View style={styles.BoxLineLeft} />
+                                <View style={styles.BoxLineCenterA} />
+                                <View style={styles.BoxLineCenterB} />
+                                <View style={styles.BoxLineCenterC} />
+                                <View style={styles.BoxLineRight} />
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                {
+                                    item.sub2.map((itemSub2, indexSub2) => {
+                                        return (
+                                            <TouchableOpacity onPress={() => handleSheetActive(index)} key={indexSub2} activeOpacity={0.6} style={styles.BoxList}>
+                                                <View style={styles.BoxUser}>
+                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.mainColor} />
+                                                    {
+                                                        itemSub2.user.length > 0 ?
+                                                            <>
+                                                                <Text style={{ fontSize: sizeFont(3) }}>{itemSub2.user}</Text>
+                                                                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                    <View style={{ flexDirection: 'row', padding: 3 }}>
+                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                                        <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
+                                                                    </View>
+                                                                    <View style={{ flexDirection: 'row', padding: 3 }}>
+                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                                        <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
+                                                                    </View>
+                                                                </View>
+                                                            </> :
+                                                            <TouchableOpacity style={styles.BtnAdd}>
+                                                                <Text style={{ color: color.fontWhite }}>Add</Text>
+                                                            </TouchableOpacity>
+                                                    }
+                                                </View>
+                                            </TouchableOpacity>
+                                        );
+                                    })
+                                }
+                            </View>
+                        </SafeAreaView>
+                    );
+                })
+            }
             <RBSheet
                 ref={refRBSheet}
                 closeOnDragDown={true}
@@ -283,5 +318,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: sizeWidth(2),
+    },
+    BtnDetail: {
+        backgroundColor: color.mainColor,
+        paddingHorizontal: 10,
+        borderRadius: 5,
+    },
+    BtnAdd: {
+        backgroundColor: color.mainColor,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+        paddingHorizontal: 20,
+        marginTop: 25,
     },
 });
