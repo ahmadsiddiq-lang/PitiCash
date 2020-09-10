@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BackHandler, ToastAndroid, StatusBar } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,7 +7,7 @@ import MyTabBar from './MyTabbar';
 import Home from '../pages/Home';
 import Project from '../pages/Project';
 import MyProject from '../pages/MyProject';
-import Akun from '../pages/Akun';
+// import Akun from '../pages/Akun';
 import Profile from '../pages/Profile';
 import BonusPairing from '../pages/BonusPairing';
 import BonusSponsor from '../pages/BonusSponsor';

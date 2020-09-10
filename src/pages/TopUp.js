@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import HeadTopUp from '../components/Headers/HeadTopUp';
 import PitiCash from '../components/TopUp/PitiCash';
 import History from '../components/TopUp/History';

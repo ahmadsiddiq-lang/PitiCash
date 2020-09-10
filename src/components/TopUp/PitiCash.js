@@ -1,15 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
-import { Picker } from '@react-native-community/picker';
+// import { Picker } from '@react-native-community/picker';
 
 export default function PitiCash({ navigation }) {
 
-    const [valuePicker, setPicker] = useState('');
 
     return (
         <LinearGradient colors={[color.background1, color.background1, color.background6]} style={styles.Container}>
