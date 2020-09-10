@@ -84,7 +84,7 @@ export default class Splash extends React.Component {
                                     </View>
                                     <View style={styles.BoxText}>
                                         <Text style={{ fontSize: sizeFont(8), fontFamily: Poppins.Bold, color: color.mainColor }}>{item.title}</Text>
-                                        <Text style={{ textAlign: 'center', color: color.fontBody2 }}>{item.text}</Text>
+                                        <Text style={{ textAlign: 'center', color: color.fontBody2, fontSize: sizeFont(3.5) }}>{item.text}</Text>
                                     </View>
                                 </View>
                             );
@@ -103,7 +103,7 @@ export default class Splash extends React.Component {
                     </View>
                     <View style={styles.BoxBtn}>
                         <TouchableOpacity onPress={() => this.props.navigation.dispatch(StackActions.replace('LoginSplash'))} activeOpacity={0.6} style={styles.BtnSkip}>
-                            <Text style={{ color: color.fontBody2, fontFamily: Poppins.Medium }}>Skip</Text>
+                            <Text style={{ color: color.fontBody2, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Skip</Text>
                         </TouchableOpacity>
                         {
                             this.state.indexOf === data.length - 1 ?
@@ -111,7 +111,7 @@ export default class Splash extends React.Component {
                                     <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Start</Text>
                                 </TouchableOpacity> :
                                 <TouchableOpacity onPress={() => this._handleNext()} activeOpacity={0.6} style={styles.Btn}>
-                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Next</Text>
+                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Next</Text>
                                 </TouchableOpacity>
                         }
                     </View>
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
     },
     CicleActive: {
-        width: 18,
+        width: 20,
         backgroundColor: color.mainColor,
     },
     BoxCircle: {

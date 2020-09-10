@@ -57,7 +57,7 @@ export default function Registrasi({ navigation }) {
                             style={styles.checkbox}
                         />
                         <View style={styles.BoxSyarat}>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Saya menyetutjui <Text style={{ color: color.mainColor }}>Syarat & ketentuan </Text>yang berlaku</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Saya menyetujui <Text style={{ color: color.mainColor }}>Syarat & ketentuan </Text>yang berlaku</Text>
                         </View>
                     </View>
                 </View>
