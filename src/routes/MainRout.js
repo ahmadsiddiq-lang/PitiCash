@@ -7,7 +7,6 @@ import MyTabBar from './MyTabbar';
 import Home from '../pages/Home';
 import Project from '../pages/Project';
 import MyProject from '../pages/MyProject';
-// import Akun from '../pages/Akun';
 import Profile from '../pages/Profile';
 import BonusPairing from '../pages/BonusPairing';
 import BonusSponsor from '../pages/BonusSponsor';

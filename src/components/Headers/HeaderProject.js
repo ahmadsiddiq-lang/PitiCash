@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../../assets/responsive/Size';
@@ -11,12 +11,11 @@ export default function HeaderProject({ navigation }) {
         <View style={styles.Container}>
             <View style={styles.Content}>
                 <TouchableOpacity onPress={() => navigation.navigate('Search')} style={styles.BoxInput}>
-                    {/* <TextInput placeholder="Cari investasi apa ?" placeholderTextColor={color.fontWhite} style={styles.Input} /> */}
                     <View style={{ width: '90%', paddingLeft: 20 }}>
                         <Text style={{ color: color.fontWhite }}>Cari investasi apa</Text>
                     </View>
                     <View style={styles.BoxSearch} activeOpacity={0.6}>
-                        <Ionicons name="search" size={25} color={color.background1} />
+                        <Ionicons name="search" size={20} color={color.background1} />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.BoxBell}>
@@ -68,8 +67,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.SearchColor,
     },
     BoxBell: {
-        // borderWidth: 1,
-        // justifyContent: 'center',
+        marginTop: 1.5,
     },
     Circle: {
         width: 13,

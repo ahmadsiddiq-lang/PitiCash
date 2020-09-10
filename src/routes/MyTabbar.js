@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, BackHandler, ToastAndroid, Platform } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { color } from '../assets/colors/color';
 import { sizeWidth, sizeFont } from '../assets/responsive/Size';
 
