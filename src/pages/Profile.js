@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
     },
     ImageList: {
         resizeMode: 'contain',
-        width: sizeWidth(6),
-        height: sizeWidth(6),
+        width: sizeWidth(5),
+        height: sizeWidth(5),
         marginRight: 20,
     },
     Footer: {

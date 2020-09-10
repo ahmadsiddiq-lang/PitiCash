@@ -13,7 +13,7 @@ export default function Search({ navigation }) {
                     onPress={() => navigation.goBack()}
                     // activeOpacity={0.6}
                     style={styles.Btn}>
-                    <Ionicons name="arrow-back-outline" size={25} color={color.fontBlack} />
+                    <Ionicons name="arrow-back-outline" size={25} color={color.fontBody2} />
                 </TouchableHighlight>
                 <TextInput autoFocus={true} style={styles.Input} placeholder="Search..." />
             </View>
