@@ -25,7 +25,7 @@ export default function Reaferals({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header navigation={navigation} title={dataHead[indeOf].title} />
+            <Header navigation={navigation} title={'Network'} />
             <Head
                 dataHead={dataHead}
                 setIndex={setIndex}

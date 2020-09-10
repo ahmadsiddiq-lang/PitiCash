@@ -6,7 +6,7 @@ import { Poppins } from '../assets/fonts/Poppins';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Profile() {
+export default function Profile({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Head}>
@@ -31,7 +31,7 @@ export default function Profile() {
                         </View>
                         <Ionicons name="chevron-forward" size={sizeFont(4)} color={color.fontBody3} />
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.6} style={styles.BoxList}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Reaferals')} activeOpacity={0.6} style={styles.BoxList}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Image style={styles.ImageList} source={require('../assets/images/Profile/IconNetwork.png')} />
                             <Text style={{ fontSize: sizeFont(3.3) }}>Network</Text>
