@@ -18,8 +18,8 @@ export default function HeaderHome({ navigation }) {
                         <Image style={{ resizeMode: 'contain', width: sizeWidth(10.5), height: sizeWidth(10.5) }} source={require('../../assets/images/User.png')} />
                     </View>
                     <View style={{ marginLeft: 15 }}>
-                        <Text style={{ color: color.fontWhite }}>Selamat datang,</Text>
                         <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(4) }}>Jhone Doe</Text>
+                        <Text style={{ color: color.fontWhite }}>Developer</Text>
                     </View>
                 </View>
                 <TouchableOpacity onPress={() => navigation.navigate('Notifikasi')} style={{ marginTop: 5 }}>
