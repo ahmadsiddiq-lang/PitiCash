@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, BackHandler, ToastAndroid } from 'react-native';
 import Header from '../components/Headers/HeaderHome';
 import { color } from '../assets/colors/color';
 import { Poppins } from '../assets/fonts/Poppins';
@@ -27,6 +27,36 @@ const BoxCarousal = () => {
 };
 
 export default function Home({ navigation }) {
+    let currentCount = 0;
+    const handleBack = () => {
+        if (currentCount < 1) {
+            currentCount += 1;
+            ToastAndroid.showWithGravity(
+                'Press again to close',
+                ToastAndroid.SHORT,
+                ToastAndroid.CENTER
+            );
+        } else {
+            // exit the app here using BackHandler.exitApp();
+            BackHandler.exitApp();
+        }
+        setTimeout(() => {
+            currentCount = 0;
+        }, 2000);
+    };
+
+    useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', () => {
+            handleBack();
+            return true;
+        });
+        return () => {
+            BackHandler.removeEventListener('hardwareBackPress', () => {
+                handleBack();
+                return true;
+            });
+        };
+    }, []);
     return (
         <View style={styles.Container}>
             <Header navigation={navigation} />
