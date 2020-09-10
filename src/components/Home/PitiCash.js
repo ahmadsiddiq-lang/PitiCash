@@ -43,19 +43,19 @@ export default function PitiCash({ navigation }) {
             <View style={styles.BoxAction}>
                 <TouchableOpacity onPress={() => navigation.navigate('TopUp')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                     <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/TopUp.png')} />
-                    <Text style={{ fontSize: sizeFont(3.5) }}>Top Up</Text>
+                    <Text style={{ fontSize: sizeFont(3.3) }}>Top Up</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Registrasi')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                     <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Registrasi.png')} />
-                    <Text style={{ fontSize: sizeFont(3.5) }}>Registrasi</Text>
+                    <Text style={{ fontSize: sizeFont(3.3) }}>Registrasi</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('TransferPtc')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                     <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/Transfer.png')} />
-                    <Text style={{ fontSize: sizeFont(3.5) }} > Transfer</Text>
+                    <Text style={{ fontSize: sizeFont(3.3) }} > Transfer</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('History')} style={{ alignItems: 'center' }} activeOpacity={0.6} >
                     <Image style={{ resizeMode: 'contain', width: sizeWidth(8), height: sizeWidth(8) }} source={require('../../assets/images/History.png')} />
-                    <Text style={{ fontSize: sizeFont(3.5) }}> History</Text>
+                    <Text style={{ fontSize: sizeFont(3.3) }}> History</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: color.border1,
         borderRadius: 10,
-        paddingHorizontal: 20,
+        paddingHorizontal: sizeWidth(4),
         paddingVertical: 5,
     },
     Btn: {

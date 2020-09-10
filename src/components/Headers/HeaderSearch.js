@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingHorizontal: 20,
         alignItems: 'center',
-        backgroundColor: '#47ffe9',
+        backgroundColor: '#006e60',
     },
     BtnSearch: {
         // borderWidth: 1,
