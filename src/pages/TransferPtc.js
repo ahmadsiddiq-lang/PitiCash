@@ -8,7 +8,7 @@ import TransferTiket from '../components/TransferPtc/TransferTiket';
 import { Poppins } from '../assets/fonts/Poppins';
 import { sizeFont } from '../assets/responsive/Size';
 
-const dataTitle = ['Transfer PTC', 'Transfer Tiket'];
+const dataTitle = ['Transfer PTC', 'Transfer Ticket'];
 
 const dataPages = [
     <TranferPTC />,
@@ -21,7 +21,7 @@ export default function TransferPtc({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header navigation={navigation} title={dataTitle[indeOf]} />
+            <Header navigation={navigation} title={'Transfer'} />
             <View style={styles.BoxHead}>
                 {
                     dataTitle.map((item, index) => {
