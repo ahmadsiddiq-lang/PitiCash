@@ -35,6 +35,7 @@ import AllProject from '../pages/AllProject';
 import PemberiDana from '../pages/PemberiDana';
 import Search from '../pages/Search';
 import Registrasi from '../pages/Registrasi';
+import TransferPtc from '../pages/TransferPtc';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -121,6 +122,7 @@ export default function App() {
                 <Stack.Screen name="PemberiDana" component={PemberiDana} />
                 <Stack.Screen name="Registrasi" component={Registrasi} />
                 <Stack.Screen name="Search" component={Search} />
+                <Stack.Screen name="TransferPtc" component={TransferPtc} />
             </Stack.Navigator>
         </NavigationContainer>
     );
