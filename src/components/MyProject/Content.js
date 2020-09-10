@@ -33,7 +33,7 @@ export default function Content({ navigation }) {
                                 borderColor: color.mainColor,
                             },
                             ]}>
-                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBody2 }}>{item.title}</Text>
+                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBody2, fontSize: sizeFont(3.5) }}>{item.title}</Text>
                             </TouchableOpacity>
                         );
                     })
@@ -49,13 +49,13 @@ export default function Content({ navigation }) {
                                 </View>
                                 <View style={styles.BoxContentRight}>
                                     <View style={styles.BoxText}>
-                                        <Text style={{ fontFamily: Poppins.Medium }}>Bersama membangun Smarty Mart</Text>
+                                        <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Bersama membangun Smarty Mart</Text>
                                         <View style={styles.BoxPrice}>
                                             <View style={styles.boxTgl}>
                                                 <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>{item.date}</Text>
                                             </View>
                                             <View style={styles.BoxRp}>
-                                                <Text style={{ fontFamily: Poppins.Medium, marginLeft: 8 }}>Rp. {item.rp}</Text>
+                                                <Text style={{ fontFamily: Poppins.Medium, marginLeft: 8, fontSize: sizeFont(3.5) }}>Rp. {item.rp}</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -141,9 +141,11 @@ const styles = StyleSheet.create({
     boxTgl: {
         // borderWidth: 1,
         width: sizeWidth(22),
+        marginBottom: 2,
     },
     BoxRp: {
         // borderWidth: 1,
+        // justifyContent: 'flex-end',
         // maxWidth: sizeWidth(40),
     },
 });

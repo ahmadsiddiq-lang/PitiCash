@@ -88,7 +88,7 @@ export default function Profile({ navigation }) {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.Footer}>
-                    <TouchableOpacity style={styles.Btn}>
+                    <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
                         <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.8) }}>Sign Out</Text>
                     </TouchableOpacity>
                     <Text style={{ color: color.fontBody2, textAlign: 'center', fontSize: sizeFont(2.7) }}>Version 1.0</Text>
@@ -154,12 +154,12 @@ const styles = StyleSheet.create({
     Footer: {
         backgroundColor: color.background1,
         paddingHorizontal: 20,
-        paddingVertical: 35,
+        paddingVertical: 20,
     },
     Btn: {
         backgroundColor: color.mainColor,
         alignItems: 'center',
-        paddingVertical: 5,
+        paddingVertical: 8,
         borderRadius: 8,
         marginBottom: 15,
     },

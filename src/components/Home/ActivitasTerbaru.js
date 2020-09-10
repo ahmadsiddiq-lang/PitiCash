@@ -15,7 +15,7 @@ export default function ActivitasTerbaru() {
             <View style={styles.Content}>
                 <View style={styles.BoxRiwayat}>
                     <View style={[styles.BoxItemRiwayat, { paddingRight: 20 }]}>
-                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: 10 }}>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: 8 }}>
                             <View style={{ marginLeft: 10, marginTop: 10 }}>
                                 <View style={styles.Circle} />
                                 <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>40.00</Text>
@@ -101,7 +101,7 @@ const ChartRiwayat = () => {
                 ],
             }}
             width={sizeWidth(55)} // from react-native
-            height={sizeWidth(20)}
+            height={sizeWidth(28)}
             // yAxisLabel={'Rp'}
             withVerticalLabels={false}
             withHorizontalLabels={false}
@@ -126,6 +126,7 @@ const ChartRiwayat = () => {
                 borderRadius: 8,
                 marginLeft: -50,
                 marginBottom: -2,
+                marginTop: -8,
             }}
         />
     );

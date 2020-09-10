@@ -116,7 +116,7 @@ export default function Refferal() {
                 ref={refRBSheet}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
-                height={sizeHeight(40)}
+                height={sizeHeight(45)}
                 animationType="fade"
                 customStyles={{
                     wrapper: {
