@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
@@ -22,10 +22,10 @@ export default function PitiCash({ navigation }) {
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>280.000</Text>
                 </View>
                 <View style={styles.BOxBottom}>
-                    <Text style={{ fontFamily: Poppins.Medium }}>TOp UP Piti Cash</Text>
+                    <Text style={{ fontFamily: Poppins.Medium }}>Top Up Piti Cash</Text>
                     <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>Jumlah Top Up</Text>
                     <View style={styles.BOxPicker}>
-                        <Picker
+                        {/* <Picker
                             selectedValue={valuePicker}
                             style={{ height: sizeWidth(8), width: '100%' }}
                             onValueChange={(itemValue, itemIndex) =>
@@ -35,7 +35,8 @@ export default function PitiCash({ navigation }) {
                             <Picker.Item label="40" value="40" />
                             <Picker.Item label="50" value="50" />
                             <Picker.Item label="100" value="100" />
-                        </Picker>
+                        </Picker> */}
+                        <TextInput placeholder="Jumlah" maxLength={30} keyboardType="numeric" style={{ padding: 0 }} />
                     </View>
                 </View>
                 <View style={styles.BoxBtn}>

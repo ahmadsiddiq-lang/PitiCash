@@ -34,7 +34,7 @@ const ContentSignUp = ({ navigation }) => {
                     <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Hanphone</Text>
                     <View style={styles.BoxInputItem}>
                         <Image style={styles.IconInput} source={require('../assets/images/Handphone.png')} />
-                        <TextInput placeholder="Masukkan No. Handphone" style={styles.Input} />
+                        <TextInput keyboardType="phone-pad" placeholder="Masukkan No. Handphone" style={styles.Input} />
                     </View>
                 </View>
             </View>

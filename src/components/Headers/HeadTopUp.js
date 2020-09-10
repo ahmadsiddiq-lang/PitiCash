@@ -10,7 +10,7 @@ export default function HeadTopUp({ navigation, title }) {
         <View style={styles.Container}>
             <View style={styles.Content}>
                 <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.Btn}>
-                    <Ionicons name="arrow-back-outline" size={25} color={color.fontBlack} />
+                    <Ionicons name="arrow-back-outline" size={25} color={color.fontBody2} />
                 </TouchableOpacity>
                 <Text style={styles.Title}>{title}</Text>
             </View>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     Title: {
-        color: color.fontBlack,
+        color: color.fontBody2,
         fontSize: sizeFont(4),
         fontFamily: Poppins.Medium,
         marginLeft: 10,

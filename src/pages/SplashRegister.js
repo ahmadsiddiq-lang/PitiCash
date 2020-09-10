@@ -29,7 +29,7 @@ const ContentSplash = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
             <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Sign Up</Text>
-            <Text style={{ color: color.fontBody2 }}>Pendaftaran Anda telah selesai, silahkan cek SMS di handphone Anda untuk verifikasi akun.</Text>
+            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3.3) }}>Pendaftaran Anda telah selesai, silahkan cek SMS di handphone Anda untuk verifikasi akun.</Text>
             <View style={styles.BoxImage}>
                 <Image style={{ resizeMode: 'contain', width: '100%', height: '100%' }} source={require('../assets/images/Login/SplashRegister.png')} />
             </View>

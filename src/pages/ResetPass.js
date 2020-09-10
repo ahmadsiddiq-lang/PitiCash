@@ -28,13 +28,13 @@ const ContentSignUp = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
             <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Resset Password</Text>
-            <Text style={{ color: color.fontBody2 }}>Masukkan email yang terdaftar, kami akan mengirimkan email verifikasi untuk mengatur ulang password</Text>
+            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3.3) }}>Masukkan email yang terdaftar, kami akan mengirimkan email verifikasi untuk mengatur ulang password</Text>
             <View style={styles.BoxInput}>
                 <View style={styles.BoxContentInput}>
                     <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Email</Text>
                     <View style={styles.BoxInputItem}>
                         <Image style={styles.IconInput} source={require('../assets/images/Login/mail.png')} />
-                        <TextInput placeholder="Masukkan Username" style={styles.Input} />
+                        <TextInput keyboardType="email-address" placeholder="Masukkan Username" style={styles.Input} />
                     </View>
                 </View>
             </View>
