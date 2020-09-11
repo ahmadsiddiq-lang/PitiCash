@@ -34,7 +34,7 @@ export default function ActivitasTerbaru({ navigation }) {
                             </View>
                             <Image style={{ resizeMode: 'contain', width: sizeWidth(9), height: sizeWidth(9) }} source={require('../../assets/images/PairingBonus.png')} />
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('BonusReward')} style={styles.BoxRightRiwayat}>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('BonusSponsor')} style={styles.BoxRightRiwayat}>
                             <View>
                                 <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>27.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Refferal Bonus</Text>
