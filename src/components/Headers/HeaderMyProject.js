@@ -6,12 +6,12 @@ import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
 
 
-export default function HeaderMyProject({ setHeader }) {
+export default function HeaderMyProject({ setHeader, navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.BoxContent}>
                 <Text style={{ fontSize: sizeFont(4), fontFamily: Poppins.Medium, color: color.fontWhite }}>My Project</Text>
-                <TouchableOpacity onPress={() => setHeader(e => !e)} activeOpacity={0.6} style={styles.BtnSearch}>
+                <TouchableOpacity onPress={() => navigation.navigate('Search')} activeOpacity={0.6} style={styles.BtnSearch}>
                     <Ionicons name="search" size={sizeFont(6)} color={color.background1} />
                 </TouchableOpacity>
             </View>

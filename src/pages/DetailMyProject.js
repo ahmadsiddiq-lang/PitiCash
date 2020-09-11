@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Header from '../components/Headers/HeaderMetode';
@@ -16,8 +17,8 @@ export default function DetailMyProject({ navigation }) {
                 <View style={styles.BoxText}>
                     <Text style={{ fontSize: sizeFont(3.3), fontFamily: Poppins.Medium }}>Investasi dengan resiko rendah Smarty Coffee</Text>
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Makanan</Text>
-                    <TouchableOpacity style={styles.BtnLihat}>
-                        <Text style={{ color: color.fontWhite }}>Lihat Detail</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('DetailProject')} style={styles.BtnLihat}>
+                        <Text style={{ color: color.fontWhite, fontSize: sizeFont(3) }}>Lihat Detail</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -26,18 +27,18 @@ export default function DetailMyProject({ navigation }) {
                 <View style={styles.BoxTextContent}>
                     <View style={styles.ListContent}>
                         <View style={styles.Boxleft}>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Tanggal</Text>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Metode Pembayaran</Text>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>No. Investasi</Text>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Jumlah Investasi</Text>
-                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Lihat Bonus</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginBottom: 5 }}>Tanggal</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginBottom: 5 }}>Metode Pembayaran</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginBottom: 5 }}>No. Investasi</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginBottom: 5 }}>Jumlah Investasi</Text>
+                            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginBottom: 5 }}>Limit Bonus</Text>
                             <Text style={{ color: color.fontBody2, fontSize: sizeFont(3), marginTop: 10 }}>Status</Text>
                         </View>
                         <View>
-                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>31 Agustus 2020 - 09:30</Text>
-                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>BCA Virtual Account</Text>
-                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>0928409273049</Text>
-                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>PTC. 100</Text>
+                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium, marginBottom: 5 }}>31 Agustus 2020 - 09:30</Text>
+                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium, marginBottom: 5 }}>BCA Virtual Account</Text>
+                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium, marginBottom: 5 }}>0928409273049</Text>
+                            <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium, marginBottom: 5 }}>100 PTC</Text>
                             <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>1203.00</Text>
                             <View style={styles.Berhasil}>
                                 <Text style={{ color: color.mainColor, fontSize: sizeFont(3) }}>Berhasil</Text>
@@ -53,6 +54,7 @@ export default function DetailMyProject({ navigation }) {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
+        backgroundColor: color.background1,
     },
     ContentUp: {
         // borderWidth: 1,
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
         marginTop: 5,
+        padding: 3,
     },
     Line: {
         height: 8,
