@@ -13,14 +13,14 @@ const dataHead = [
     { title: 'Generation' },
 ];
 
-const dataListPage = [
-    <Registrasi />,
-    <Refferal />,
-    <Generation />,
-];
 
 export default function Reaferals({ navigation }) {
 
+    const dataListPage = [
+        <Registrasi navigation={navigation} />,
+        <Refferal navigation={navigation} />,
+        <Generation navigation={navigation} />,
+    ];
     const [indeOf, setIndex] = useState(0);
 
     return (

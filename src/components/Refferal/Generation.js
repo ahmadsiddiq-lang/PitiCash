@@ -30,7 +30,7 @@ export default function Generation() {
                                         <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>Generation {item.generasi}</Text>
                                         <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>Join date {item.date}</Text>
                                     </View>
-                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5), color: color.mainColor }}>{item.point}</Text>
+                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5), color: color.mainColor }}>{item.point} PTC</Text>
                                 </View>
                             );
                         })

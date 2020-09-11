@@ -15,7 +15,7 @@ const data = [
     { title: 'Yogara 99', date: '24-06-202', status: '0' },
 ];
 
-export default function Refferal() {
+export default function Refferal({ navigation }) {
     const refRBSheet = useRef();
 
     const [dataSheet, setDataSheet] = useState(null);
@@ -27,21 +27,21 @@ export default function Refferal() {
 
     const RenderItem = ({ item, index }) => {
         return (
-            <View key={index} style={styles.BoxList}>
+            <TouchableOpacity onPress={() => handleSheetActive(index)} key={index} style={styles.BoxList}>
                 <View>
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>{item.title}</Text>
                     <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Join Date {item.date}</Text>
                 </View>
                 {
                     item.status === '1' ?
-                        <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} style={styles.Btn}>
+                        <View activeOpacity={0.6} style={styles.Btn}>
                             <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.3) }}>Active</Text>
-                        </TouchableOpacity> :
-                        <TouchableOpacity activeOpacity={0.6} style={styles.BtnNon}>
+                        </View> :
+                        <View activeOpacity={0.6} style={styles.BtnNon}>
                             <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.3) }}>Non-Active</Text>
-                        </TouchableOpacity>
+                        </View>
                 }
-            </View>
+            </TouchableOpacity>
         );
     };
 
