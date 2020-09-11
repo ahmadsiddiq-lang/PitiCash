@@ -35,7 +35,7 @@ export default function PitiCash({ navigation }) {
                             <Picker.Item label="50" value="50" />
                             <Picker.Item label="100" value="100" />
                         </Picker> */}
-                        <TextInput placeholder="Jumlah" maxLength={30} keyboardType="numeric" style={{ padding: 0 }} />
+                        <TextInput maxLength={30} keyboardType="numeric" style={{ padding: 0 }} />
                     </View>
                 </View>
                 <View style={styles.BoxBtn}>
