@@ -25,9 +25,9 @@ export default function DetailProject({ navigation }) {
         <View style={styles.Container}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Banner navigation={navigation} />
-                <Info navigation={navigation} />
+                {/* <Info navigation={navigation} /> */}
                 <InfoProject navigation={navigation} />
-                <PemberiDana handleSheetActive={() => handleSheetActive()} navigation={navigation} />
+                {/* <PemberiDana handleSheetActive={() => handleSheetActive()} navigation={navigation} /> */}
             </ScrollView>
             <RBSheet
                 ref={refRBSheet}
@@ -104,6 +104,7 @@ const ComponetSheet = ({ dataForSheet, navigation, refRBSheet }) => {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
+        backgroundColor: color.background1,
     },
     BoxContentUp: {
         paddingHorizontal: 20,

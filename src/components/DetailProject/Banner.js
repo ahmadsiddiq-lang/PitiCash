@@ -12,23 +12,23 @@ export default function Banner({ navigation }) {
             <View style={styles.BoxBanner}>
                 <View style={styles.Head}>
                     <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={{ padding: 5 }}>
-                        <Ionicons name="chevron-back" size={30} color={color.mainColor} />
+                        <Ionicons name="chevron-back" size={30} color={color.fontWhite} />
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6} style={{ padding: 5 }}>
-                        <Ionicons name="share-social" size={30} color={color.mainColor} />
+                        <Ionicons name="share-social" size={30} color={color.fontWhite} />
                     </TouchableOpacity>
                 </View>
                 <Image style={{ resizeMode: 'contain', width: SCREEN_WIDTH, height: '100%' }} source={require('../../assets/images/GambarProject.png')} />
             </View>
             <View style={styles.BoxTextBanner}>
-                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Bersama Membangun Smarty Mart di seluruh Indonesia</Text>
-                <View style={styles.BarLine}>
+                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium, marginBottom: 20 }}>Bersama Membangun Smarty Mart di seluruh Indonesia</Text>
+                {/* <View style={styles.BarLine}>
                     <View style={styles.LineBg} />
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5) }}>Target</Text>
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5) }}>Closing</Text>
-                </View>
+                </View> */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Rp. 10.000.000.000</Text>
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>30 Juli 2020</Text>

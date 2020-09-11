@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { color } from '../../assets/colors/color';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
-import RecomentProject from '../GlobalComponent/RecomentProject';
+// import RecomentProject from '../GlobalComponent/RecomentProject';
 
 const dataProject = [
     { image: require('../../assets/images/Project1.png'), title: 'Bisnis aman dengan Smarty Corner', target: '1000' },

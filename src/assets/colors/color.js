@@ -18,5 +18,6 @@ export const color = {
     fontWhite: '#ffff',
     fontPink: '#ff36ae',
     fontBlack: '#000',
+    fontRed: 'red',
     SearchColor: '#00DCC2',
 };

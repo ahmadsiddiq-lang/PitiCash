@@ -39,8 +39,8 @@ export default function History({ navigation }) {
                                     {
                                         item.sub.map((itemSub, indexSub) => {
                                             return (
-                                                <SafeAreaView key={indexSub}>
-                                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.3), paddingHorizontal: 20, padding: 10 }}>{itemSub.pembayaran}</Text>
+                                                <View style={{ paddingHorizontal: 20 }} key={indexSub}>
+                                                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.3), paddingVertical: 10 }}>{itemSub.pembayaran}</Text>
                                                     {
                                                         itemSub.pemasukkan ?
                                                             <View style={styles.BoxBottom}>
@@ -49,10 +49,10 @@ export default function History({ navigation }) {
                                                             </View> :
                                                             <View style={styles.BoxBottom}>
                                                                 <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Pengeluaran</Text>
-                                                                <Text style={{ color: color.fontPink }}>-Rp 100.000</Text>
+                                                                <Text style={{ color: color.fontRed }}>-Rp 100.000</Text>
                                                             </View>
                                                     }
-                                                </SafeAreaView>
+                                                </View>
                                             );
                                         })
                                     }
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     BoxBottom: {
-        paddingHorizontal: 20,
         paddingBottom: 10,
         borderBottomWidth: 1,
         borderBottomColor: color.border1,
