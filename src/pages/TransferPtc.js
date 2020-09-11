@@ -10,13 +10,13 @@ import { sizeFont } from '../assets/responsive/Size';
 
 const dataTitle = ['Transfer PTC', 'Transfer Ticket'];
 
-const dataPages = [
-    <TranferPTC />,
-    <TransferTiket />,
-];
 
 export default function TransferPtc({ navigation }) {
 
+    const dataPages = [
+        <TranferPTC navigation={navigation} />,
+        <TransferTiket navigation={navigation} />,
+    ];
     const [indeOf, setIndex] = useState(0);
 
     return (
