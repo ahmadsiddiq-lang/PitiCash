@@ -62,7 +62,7 @@ export default function Home({ navigation }) {
             <Header navigation={navigation} />
             <Content content={[
                 <PitiCash navigation={navigation} />,
-                <ActivitasTerbaru />,
+                <ActivitasTerbaru navigation={navigation} />,
                 <View style={styles.Line} />,
                 <Rekomendasi navigation={navigation} />,
                 <BoxCarousal />,
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH,
         height: 5,
         backgroundColor: color.background3,
+        marginVertical: 10,
     },
     BoxCarousal: {
         marginTop: 10,

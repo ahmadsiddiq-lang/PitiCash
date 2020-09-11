@@ -7,9 +7,9 @@ import { Poppins } from '../../assets/fonts/Poppins';
 import RecomentProject from '../GlobalComponent/RecomentProject';
 
 const dataProject = [
-    { image: require('../../assets/images/Project1.png'), target: '1000' },
-    { image: require('../../assets/images/Project4.png'), target: '500' },
-    { image: require('../../assets/images/Project5.png'), target: '850' },
+    { image: require('../../assets/images/Project1.png'), title: 'Bisnis aman dengan Smarty Corner', target: '1000' },
+    { image: require('../../assets/images/Project4.png'), title: 'Project 1000 gerobak Qsah Kebab', target: '500' },
+    { image: require('../../assets/images/Project5.png'), title: 'Product Digital System Enterprise Resource Planning', target: '850' },
 ];
 
 export default function Rekomendasi({ navigation }) {
@@ -31,13 +31,13 @@ export default function Rekomendasi({ navigation }) {
                                     <Image style={{ resizeMode: 'stretch', width: '100%', height: '100%' }} source={item.image} />
                                 </View>
                                 <View style={styles.BoxContentRight}>
-                                    <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>
+                                    <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>{item.title}</Text>
                                     <View style={{
                                         flexDirection: 'row',
                                         justifyContent: 'space-between',
                                     }}>
                                         <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5), marginTop: 5 }}>Target Project</Text>
-                                        <Text style={{ color: color.fontBody1, fontSize: sizeFont(3), marginTop: 5, fontFamily: Poppins.Medium }}>{item.target} PCT</Text>
+                                        <Text style={{ color: color.fontBody1, fontSize: sizeFont(3), marginTop: 5, fontFamily: Poppins.Medium }}>{item.target} PTC</Text>
                                     </View>
                                 </View>
                             </TouchableOpacity>

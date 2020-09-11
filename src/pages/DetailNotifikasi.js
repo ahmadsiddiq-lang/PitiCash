@@ -16,7 +16,7 @@ export default function DetailPromo({ navigation }) {
                 <SyaratKetentuan navigation={navigation} />
             </ScrollView>
             <View style={styles.BoxFooter}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnLihat}>
+                <TouchableOpacity onPress={() => navigation.navigate('AllProject')} activeOpacity={0.6} style={styles.BtnLihat}>
                     <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Lihat Project</Text>
                 </TouchableOpacity>
             </View>

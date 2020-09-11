@@ -11,7 +11,7 @@ export default function PitiCash({ navigation }) {
 
 
     return (
-        <LinearGradient colors={[color.background1, color.background1, color.background6]} style={styles.Container}>
+        <LinearGradient colors={[color.background1, '#f7fffe', '#e6fffc']} style={styles.Container}>
             <View style={styles.ContentTopUp}>
                 <View style={styles.BoxPiti}>
                     <View style={styles.BoxDompet}>

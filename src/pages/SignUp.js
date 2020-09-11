@@ -5,7 +5,7 @@ import { color } from '../assets/colors/color';
 import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
-import { Poppins } from '../assets/fonts/Poppins';
+import { Poppins, Fredoka } from '../assets/fonts/Poppins';
 import { StackActions } from '@react-navigation/native';
 
 
@@ -13,10 +13,10 @@ export default function SignUp({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Head}>
-                <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
+                {/* <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
                     <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
-                </TouchableOpacity>
-                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
+                </TouchableOpacity> */}
+                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Fredoka.Regular }}>Piti Cash</Text>
             </View>
             <Content content={[
                 <ContentSignUp navigation={navigation} />,
@@ -28,10 +28,10 @@ export default function SignUp({ navigation }) {
 const ContentSignUp = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
-            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Sign Up</Text>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Fredoka.Regular }}>Sign Up</Text>
             <View style={styles.BoxInput}>
                 <View style={styles.BoxContentInput}>
-                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Hanphone</Text>
+                    <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Handphone</Text>
                     <View style={styles.BoxInputItem}>
                         <Image style={styles.IconInput} source={require('../assets/images/Handphone.png')} />
                         <TextInput keyboardType="phone-pad" placeholder="Masukkan No. Handphone" style={styles.Input} />
@@ -39,7 +39,7 @@ const ContentSignUp = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('SplashRegister'))} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.navigate('KodeOtp')} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Sign Up</Text>
                 </TouchableOpacity>
                 <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Sudah mempunyai akun ? <Text onPress={() => navigation.dispatch(StackActions.replace('Login'))} style={{ color: color.mainColor }}>Login</Text></Text>

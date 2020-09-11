@@ -10,7 +10,7 @@ export default function BonusReward({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <Header navigation={navigation} title={'Bonus Rewarad'} />
+            <Header navigation={navigation} title={'Bonus Reward'} />
             <Content />
         </View>
     );

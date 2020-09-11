@@ -1,13 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 import Pie from 'react-native-pie';
 import { LineChart } from 'react-native-chart-kit';
 import { color } from '../../assets/colors/color';
 
-export default function ActivitasTerbaru() {
+export default function ActivitasTerbaru({ navigation }) {
 
     return (
         <View style={styles.Container}>
@@ -27,20 +27,20 @@ export default function ActivitasTerbaru() {
                         </View>
                     </View>
                     <View style={styles.BoxItemRiwayat}>
-                        <View style={styles.BoxRightRiwayat}>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('BonusPairing')} style={styles.BoxRightRiwayat}>
                             <View>
                                 <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>13.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Pairing Bonus</Text>
                             </View>
                             <Image style={{ resizeMode: 'contain', width: sizeWidth(9), height: sizeWidth(9) }} source={require('../../assets/images/PairingBonus.png')} />
-                        </View>
-                        <View style={styles.BoxRightRiwayat}>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate('BonusReward')} style={styles.BoxRightRiwayat}>
                             <View>
                                 <Text style={{ fontSize: sizeFont(4.5), fontFamily: Poppins.Medium, color: color.fontBlack }}>27.00</Text>
                                 <Text style={{ fontSize: sizeFont(3), color: color.fontBody2 }}>Refferal Bonus</Text>
                             </View>
                             <Image style={{ resizeMode: 'contain', width: sizeWidth(9), height: sizeWidth(9) }} source={require('../../assets/images/RefferalBonus.png')} />
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View>
@@ -86,17 +86,25 @@ const ChartRiwayat = () => {
     return (
         <LineChart
             data={{
-                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
+                // labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'],
                 datasets: [
                     {
                         data: [
-                            Math.random() * 100,
-                            Math.random() * 100,
-                            Math.random() * 100,
-                            Math.random() * 100,
-                            Math.random() * 100,
-                            Math.random() * 100,
+                            8,
+                            9.8,
+                            9.9,
+                            11,
+                            10,
+                            12,
                         ],
+                        // data: [
+                        //     Math.random() * 100,
+                        //     Math.random() * 100,
+                        //     Math.random() * 100,
+                        //     Math.random() * 100,
+                        //     Math.random() * 100,
+                        //     Math.random() * 100,
+                        // ],
                     },
                 ],
             }}
@@ -111,7 +119,7 @@ const ChartRiwayat = () => {
             chartConfig={{
                 backgroundGradientToOpacity: color.background3,
                 backgroundColor: color.mainColor,
-                backgroundGradientFrom: color.background2,
+                backgroundGradientFrom: color.background1,
                 backgroundGradientTo: color.background1,
                 // decimalPlaces: 2, // optional, defaults to 2dp
                 color: (opacity = 1) => color.mainColor,

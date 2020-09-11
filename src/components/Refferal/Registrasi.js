@@ -42,7 +42,7 @@ export default function Registrasi() {
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Detail Member</Text>
                     <View style={styles.BoxHead}>
                         <View style={styles.BoxAvatar}>
-                            <FontAwesome name="user" size={sizeFont(18)} color={color.mainColor} />
+                            <FontAwesome name="user" size={sizeFont(18)} color={color.fontBody3} />
                         </View>
                     </View>
                     <View>
@@ -94,15 +94,15 @@ export default function Registrasi() {
                         <SafeAreaView key={index}>
                             <View style={styles.Content1}>
                                 <View activeOpacity={0.6} style={styles.BoxUser}>
-                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody2} />
+                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
                                     <Text style={{ fontSize: sizeFont(3) }}>{item.Utama}</Text>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                             <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                             <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                         </View>
                                     </View>
@@ -126,15 +126,15 @@ export default function Registrasi() {
                                         return (
                                             <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} key={indexSub1} style={styles.BoxList}>
                                                 <View style={styles.BoxUser}>
-                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody2} />
+                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
                                                     <Text style={{ fontSize: sizeFont(3) }}>{itemSub1.user}</Text>
                                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                                             <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                                                         </View>
                                                         <View style={{ flexDirection: 'row', padding: 3 }}>
-                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                            <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                                             <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                                         </View>
                                                     </View>
@@ -162,18 +162,18 @@ export default function Registrasi() {
                                         return (
                                             <TouchableOpacity onPress={() => handleSheetActive(index)} key={indexSub2} activeOpacity={0.6} style={styles.BoxList}>
                                                 <View style={styles.BoxUser}>
-                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody2} />
+                                                    <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
                                                     {
                                                         itemSub2.user.length > 0 ?
                                                             <>
                                                                 <Text style={{ fontSize: sizeFont(3) }}>{itemSub2.user}</Text>
                                                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                                     <View style={{ flexDirection: 'row', padding: 3 }}>
-                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                                                         <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>12</Text>
                                                                     </View>
                                                                     <View style={{ flexDirection: 'row', padding: 3 }}>
-                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody2} />
+                                                                        <FontAwesome name="user" size={sizeFont(4)} color={color.fontBody3} />
                                                                         <Text style={{ marginLeft: 2, fontSize: sizeFont(3) }}>17</Text>
                                                                     </View>
                                                                 </View>

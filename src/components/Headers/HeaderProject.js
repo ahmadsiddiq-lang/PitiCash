@@ -15,7 +15,7 @@ export default function HeaderProject({ navigation }) {
                         <Text style={{ color: color.fontWhite }}>Cari investasi apa</Text>
                     </View>
                     <View style={styles.BoxSearch} activeOpacity={0.6}>
-                        <Ionicons name="search" size={20} color={color.background1} />
+                        <Ionicons name="search" size={sizeFont(6)} color={color.background1} />
                     </View>
                 </TouchableOpacity>
                 <View style={styles.BoxBell}>

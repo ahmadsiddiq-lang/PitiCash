@@ -16,8 +16,8 @@ export default function Headers({ title, navigation }) {
                     </TouchableOpacity>
                     <Text style={styles.Title}>{title}</Text>
                 </View>
-                <TouchableOpacity activeOpacity={0.6} style={styles.Btn}>
-                    <Ionicons name="search-outline" size={25} color={color.borderWhite} />
+                <TouchableOpacity onPress={() => navigation.navigate('Search')} activeOpacity={0.6} style={styles.Btn}>
+                    <Ionicons name="search" size={sizeFont(6)} color={color.borderWhite} />
                 </TouchableOpacity>
             </View>
         </View>

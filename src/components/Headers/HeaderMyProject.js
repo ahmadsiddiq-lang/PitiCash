@@ -12,7 +12,7 @@ export default function HeaderMyProject({ setHeader }) {
             <View style={styles.BoxContent}>
                 <Text style={{ fontSize: sizeFont(4), fontFamily: Poppins.Medium, color: color.fontWhite }}>My Project</Text>
                 <TouchableOpacity onPress={() => setHeader(e => !e)} activeOpacity={0.6} style={styles.BtnSearch}>
-                    <Ionicons name="search" size={25} color={color.background1} />
+                    <Ionicons name="search" size={sizeFont(6)} color={color.background1} />
                 </TouchableOpacity>
             </View>
         </View>

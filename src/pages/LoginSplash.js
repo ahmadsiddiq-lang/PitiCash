@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { color } from '../assets/colors/color';
 import { SCREEN_WIDTH, sizeFont, sizeWidth } from '../assets/responsive/Size';
-import { Poppins } from '../assets/fonts/Poppins';
+import { Poppins, Fredoka } from '../assets/fonts/Poppins';
 import { StackActions } from '@react-navigation/native';
 
 export default function Login({ navigation }) {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     Title: {
         color: color.fontWhite,
         fontSize: sizeFont(12),
-        fontFamily: Poppins.Bold,
+        fontFamily: Fredoka.Regular,
     },
     BoxBtn: {
         width: SCREEN_WIDTH,

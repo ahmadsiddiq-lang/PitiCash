@@ -23,7 +23,7 @@ export default function Notifikasi({ navigation }) {
                     {
                         dataBanne.map((item, index) => {
                             return (
-                                <TouchableOpacity onPress={() => navigation.navigate('DetailPromo')} key={index} style={styles.ListContent}>
+                                <TouchableOpacity onPress={() => navigation.navigate('DetailNotifikasi')} key={index} style={styles.ListContent}>
                                     <View style={styles.BoxBanner}>
                                         <Image style={styles.ImageBanner} source={item.image} />
                                     </View>
