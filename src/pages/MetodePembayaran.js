@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { color } from '../assets/colors/color';
 import HeaderMetode from '../components/Headers/HeaderMetode';
 import Content from '../components/MetodePembayaran/Content';
 
@@ -15,5 +16,6 @@ export default function MetodePembayaran({ navigation }) {
 const styles = StyleSheet.create({
     Container: {
         flex: 1,
+        backgroundColor: color.background1,
     },
 });

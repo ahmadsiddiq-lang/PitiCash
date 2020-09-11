@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, BackHandler, ToastAndroid } from 'react-native';
 import Header from '../components/Headers/HeaderHome';

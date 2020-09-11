@@ -72,7 +72,7 @@ export default function Content({ navigation }) {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.Container}>
                     <View style={styles.BoxUp}>
-                        <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Transfer ke nomor Virtual Account</Text>
+                        <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.7) }}>Transfer ke nomor Virtual Account</Text>
                         <View style={styles.BoxList}>
                             <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Nama Bank</Text>
                             <View style={styles.BoxItemList}>
@@ -107,7 +107,7 @@ export default function Content({ navigation }) {
                         ref={ref}
                         transition={transitions}
                         style={styles.BoxPanudan}>
-                        <Text style={{ marginHorizontal: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Panduan Pembayaran</Text>
+                        <Text style={{ marginHorizontal: 20, fontFamily: Poppins.Medium, fontSize: sizeFont(3.8) }}>Panduan Pembayaran</Text>
                         {
                             dataArray.map((item, index) => {
                                 return (
@@ -120,7 +120,7 @@ export default function Content({ navigation }) {
                                             }}
                                             style={styles.BoxListPanduan}
                                         >
-                                            <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>{item.title}</Text>
+                                            <Text style={{ fontSize: sizeFont(3.3) }}>{item.title}</Text>
                                             {
                                                 curentIndex === index ?
                                                     <Ionicons name="chevron-up" size={sizeFont(5)} /> :
@@ -147,11 +147,11 @@ export default function Content({ navigation }) {
                 </View>
             </ScrollView>
             <View style={styles.Footer}>
-                <TouchableOpacity activeOpacity={0.6} style={styles.BtnInves}>
+                <TouchableOpacity onPress={() => navigation.navigate('MyProject')} activeOpacity={0.6} style={styles.BtnInves}>
                     <Text style={{ color: color.borderWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>CEK INVESTASI</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnKembali}>
-                    <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>KEMBALI KE PROJECT</Text>
+                    <Text style={{ color: color.mainColor, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>KEMBALI</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     BoxUp: {
         paddingHorizontal: 20,
         paddingVertical: 10,
+        marginTop: 15,
     },
     BoxList: {
         borderBottomWidth: 0.5,

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, CheckBox, Button } from 'react-native';
 import Header from '../components/Headers/HeaderMetode';
@@ -28,7 +29,10 @@ export default function Registrasi({ navigation }) {
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Piti Cash</Text>
-                        <TextInput keyboardType="numeric" placeholder="Nominal" style={styles.Input} />
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text>Rp. </Text>
+                            <TextInput keyboardType="numeric" placeholder="Nominal" style={[styles.Input, { width: '100%', paddingLeft: 10 }]} />
+                        </View>
                     </View>
                     <View style={styles.BoxList}>
                         <Text style={{ color: color.fontBody2 }}>Username</Text>
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         padding: 0,
         letterSpacing: 0.5,
-        fontSize: sizeFont(3.5),
+        fontSize: sizeFont(3),
         // fontFamily: Poppins.Medium,
     },
     BoxCheckBox: {
