@@ -30,7 +30,7 @@ export default function Banner({ navigation }) {
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(2.5) }}>Closing</Text>
                 </View> */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Rp. 10.000.000.000</Text>
+                    <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>1000 PTC</Text>
                     <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>30 Juli 2020</Text>
                 </View>
             </View>
