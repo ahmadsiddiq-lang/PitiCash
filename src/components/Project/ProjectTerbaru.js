@@ -38,7 +38,7 @@ export default function ProjectTerbaru() {
                                                 <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Closing</Text>
                                             </View> */}
                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Rp. 10.000.000</Text>
+                                                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>1000 PTC</Text>
                                                 <Text>30 Juli 2020</Text>
                                             </View>
                                         </View>
