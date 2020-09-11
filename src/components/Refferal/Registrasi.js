@@ -88,11 +88,11 @@ export default function Registrasi({ navigation }) {
 
     return (
         <View style={styles.Container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {
                     data.map((item, index) => {
                         return (
-                            <SafeAreaView key={index}>
+                            <View style={{ paddingBottom: 20 }} key={index}>
                                 <View style={styles.Content1}>
                                     <View activeOpacity={0.6} style={styles.BoxUser}>
                                         <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
@@ -195,7 +195,7 @@ export default function Registrasi({ navigation }) {
                                         })
                                     }
                                 </View>
-                            </SafeAreaView>
+                            </View>
                         );
                     })
                 }
@@ -329,16 +329,20 @@ const styles = StyleSheet.create({
     },
     BtnDetail: {
         backgroundColor: color.mainColor,
-        paddingHorizontal: 15,
+        paddingHorizontal: 10,
         borderRadius: 5,
+        maxHeight: 25,
+        minWidth: 50,
     },
     BtnAdd: {
         backgroundColor: color.mainColor,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        paddingHorizontal: 18,
-        marginTop: 50,
+        paddingHorizontal: 10,
+        marginTop: 45,
+        minWidth: 50,
+        maxHeight: 25,
         // marginBottom: 5,
     },
 });
