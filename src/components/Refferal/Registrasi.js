@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useRef, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { color } from '../../assets/colors/color';
 import { sizeFont, sizeWidth, sizeHeight } from '../../assets/responsive/Size';
@@ -125,7 +125,7 @@ export default function Registrasi({ navigation }) {
                                     {
                                         item.sub1.map((itemSub1, indexSub1) => {
                                             return (
-                                                <TouchableOpacity onPress={() => handleSheetActive(index)} activeOpacity={0.6} key={indexSub1} style={styles.BoxList}>
+                                                <View activeOpacity={0.6} key={indexSub1} style={styles.BoxList}>
                                                     <View style={styles.BoxUser}>
                                                         <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
                                                         <Text style={{ fontSize: sizeFont(3) }}>{itemSub1.user}</Text>
@@ -143,7 +143,7 @@ export default function Registrasi({ navigation }) {
                                                             <Text style={{ color: color.fontWhite, fontSize: sizeFont(2.8) }}>Detail</Text>
                                                         </TouchableOpacity>
                                                     </View>
-                                                </TouchableOpacity>
+                                                </View>
                                             );
                                         })
                                     }
@@ -164,7 +164,7 @@ export default function Registrasi({ navigation }) {
                                     {
                                         item.sub2.map((itemSub2, indexSub2) => {
                                             return (
-                                                <TouchableOpacity onPress={() => handleSheetActive(index)} key={indexSub2} activeOpacity={0.6} style={styles.BoxList}>
+                                                <View key={indexSub2} activeOpacity={0.6} style={styles.BoxList}>
                                                     <View style={styles.BoxUser}>
                                                         <FontAwesome name="user" size={sizeFont(10)} color={color.fontBody3} />
                                                         {
@@ -190,7 +190,7 @@ export default function Registrasi({ navigation }) {
                                                                 </TouchableOpacity>
                                                         }
                                                     </View>
-                                                </TouchableOpacity>
+                                                </View>
                                             );
                                         })
                                     }
@@ -340,7 +340,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
         paddingHorizontal: 10,
-        marginTop: 45,
+        marginTop: sizeWidth(11.3),
         minWidth: 50,
         maxHeight: 25,
         // marginBottom: 5,

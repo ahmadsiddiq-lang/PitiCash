@@ -26,8 +26,8 @@ export default function MyTabBar({ state, descriptors, navigation }) {
 
     const iconTab = [
         { image: require('../assets/images/icontab/icon1.png'), imageW: require('../assets/images/icontab/HomeW.png'), title: 'Home' },
-        { image: require('../assets/images/icontab/icon2.png'), imageW: require('../assets/images/icontab/ProjectW.png'), title: 'Project' },
-        { image: require('../assets/images/icontab/icon3.png'), imageW: require('../assets/images/icontab/MyProjectW.png'), title: 'My Project' },
+        { image: require('../assets/images/icontab/icon2.png'), imageW: require('../assets/images/icontab/ProjectW.png'), title: 'Report' },
+        { image: require('../assets/images/icontab/icon3.png'), imageW: require('../assets/images/icontab/MyProjectW.png'), title: 'Stock' },
         { image: require('../assets/images/icontab/icon4.png'), imageW: require('../assets/images/icontab/AkunW.png'), title: 'Profile' },
     ];
 

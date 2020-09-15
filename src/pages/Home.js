@@ -7,7 +7,8 @@ import { Poppins } from '../assets/fonts/Poppins';
 import Content from '../components/GlobalComponent/BgContent';
 import PitiCash from '../components/Home/PitiCash';
 import ActivitasTerbaru from '../components/Home/ActivitasTerbaru';
-import Rekomendasi from '../components/Home/Rekomendasi';
+// import Rekomendasi from '../components/Home/Rekomendasi';
+import JumlahRobot from '../components/Home/JumlahRobot';
 import Carousal from '../components/GlobalComponent/Carousal';
 import { SCREEN_WIDTH, sizeFont } from '../assets/responsive/Size';
 import { CarousalHOme } from '../DataDummy';
@@ -65,7 +66,8 @@ export default function Home({ navigation }) {
                 <PitiCash navigation={navigation} />,
                 <ActivitasTerbaru navigation={navigation} />,
                 <View style={styles.Line} />,
-                <Rekomendasi navigation={navigation} />,
+                <JumlahRobot navigation={navigation} />,
+                <View style={styles.Line} />,
                 <BoxCarousal />,
             ]} />
         </View>
