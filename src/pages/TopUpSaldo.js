@@ -14,14 +14,14 @@ export default function TopUpSaldo({ navigation }) {
                 <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Saldo Piti Cash</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Total Saldo</Text>
-                    <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>PTC. 20</Text>
+                    <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>20 PTC</Text>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                     <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>No. Telpon</Text>
                     <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>08123456778</Text>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                    <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Nominal Top Uo</Text>
+                    <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Nominal Top Up</Text>
                     <Text style={{ fontSize: sizeFont(3), fontFamily: Poppins.Medium }}>Rp. 100.000</Text>
                 </View>
             </View>

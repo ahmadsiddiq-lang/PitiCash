@@ -13,19 +13,19 @@ const dataHead = [
     { title: 'Generation' },
 ];
 
-const dataListPage = [
-    <Registrasi />,
-    <Refferal />,
-    <Generation />,
-];
 
 export default function Reaferals({ navigation }) {
 
+    const dataListPage = [
+        <Registrasi navigation={navigation} />,
+        <Refferal navigation={navigation} />,
+        <Generation navigation={navigation} />,
+    ];
     const [indeOf, setIndex] = useState(0);
 
     return (
         <View style={styles.Container}>
-            <Header navigation={navigation} title={dataHead[indeOf].title} />
+            <Header navigation={navigation} title={'Network'} />
             <Head
                 dataHead={dataHead}
                 setIndex={setIndex}

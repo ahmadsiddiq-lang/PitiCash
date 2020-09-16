@@ -1,21 +1,33 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { color } from '../../assets/colors/color';
 import { Poppins } from '../../assets/fonts/Poppins';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function Head() {
+    const [date, setDate] = useState(new Date());
+    const [show, setShow] = useState(false);
+
+    const onChange = () => {
+        setShow(Platform.OS === 'ios');
+    };
+
+
+    const showDatepicker = () => {
+        setShow(true);
+    };
     return (
         <View style={styles.Container}>
             <View style={styles.BoxContent}>
                 <Image style={styles.Image} source={require('../../assets/images/kalender.png')} />
                 <View style={styles.BoxRight}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={showDatepicker} activeOpacity={0.6}>
                         <Text style={{ color: color.mainColor }}>27 Agustus 2020</Text>
                     </TouchableOpacity>
                     <Text style={{ marginHorizontal: 5, color: color.mainColor }}>-</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={showDatepicker} activeOpacity={0.6}>
                         <Text style={{ color: color.mainColor }}>27 Agustus 2020</Text>
                     </TouchableOpacity>
                 </View>
@@ -42,6 +54,16 @@ export default function Head() {
                     }
                 </ScrollView>
             </View>
+            {show && (
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={'date'}
+                    is24Hour={true}
+                    display="default"
+                    onChange={onChange}
+                />
+            )}
         </View>
     );
 }

@@ -29,16 +29,16 @@ export default function ProjectTerbaru() {
                                             <Image style={{ resizeMode: 'stretch', height: sizeWidth(30), width: '100%' }} source={item.image} />
                                         </View>
                                         <View style={styles.ContentListCard}>
-                                            <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Bersama membangun Smarty MArt</Text>
-                                            <View style={styles.BoxBg}>
+                                            <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium, marginBottom: 20 }}>Bersama membangun Smarty MArt</Text>
+                                            {/* <View style={styles.BoxBg}>
                                                 <View style={[styles.BoxUp, { width: '60%' }]} />
                                             </View>
                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                 <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Target</Text>
                                                 <Text style={{ color: color.fontBody2, fontSize: sizeFont(3) }}>Closing</Text>
-                                            </View>
+                                            </View> */}
                                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Rp. 10.000.000</Text>
+                                                <Text style={{ fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>1000 PTC</Text>
                                                 <Text>30 Juli 2020</Text>
                                             </View>
                                         </View>

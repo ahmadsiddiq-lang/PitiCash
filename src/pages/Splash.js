@@ -2,12 +2,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { color } from '../assets/colors/color';
-import { sizeWidth, SCREEN_WIDTH, sizeFont } from '../assets/responsive/Size';
+import { SCREEN_WIDTH, sizeFont } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 const data = [
-    { image: require('../assets/images/splash/Gambar1.png'), title: 'Daftar Geratis', text: 'Pendaftaran Geratis. Tidak perlu mengeluarkan uang sedikitpun' },
-    { image: require('../assets/images/splash/Gambar2.png'), title: 'Profit Besar', text: 'Anda dapat berinfestasi dengan resiko kecil dan profit besar' },
+    { image: require('../assets/images/splash/Gambar1.png'), title: 'Daftar Gratis', text: 'Pendaftaran Gratis. Tidak perlu mengeluarkan uang sedikitpun' },
+    { image: require('../assets/images/splash/Gambar2.png'), title: 'Profit Besar', text: 'Anda dapat berinvestasi dengan resiko kecil dan profit besar' },
     { image: require('../assets/images/splash/Gambar3.png'), title: 'Investasi Aman', text: 'Tidak perlu takut berinvestasi, kami menjamin uang anda kembali' },
 ];
 
@@ -83,7 +84,7 @@ export default class Splash extends React.Component {
                                     </View>
                                     <View style={styles.BoxText}>
                                         <Text style={{ fontSize: sizeFont(8), fontFamily: Poppins.Bold, color: color.mainColor }}>{item.title}</Text>
-                                        <Text style={{ textAlign: 'center', color: color.fontBody2 }}>{item.text}</Text>
+                                        <Text style={{ textAlign: 'center', color: color.fontBody2, fontSize: sizeFont(3.5) }}>{item.text}</Text>
                                     </View>
                                 </View>
                             );
@@ -101,16 +102,16 @@ export default class Splash extends React.Component {
                         }
                     </View>
                     <View style={styles.BoxBtn}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
-                            <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Skip</Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.dispatch(StackActions.replace('LoginSplash'))} activeOpacity={0.6} style={styles.BtnSkip}>
+                            <Text style={{ color: color.fontBody2, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Skip</Text>
                         </TouchableOpacity>
                         {
                             this.state.indexOf === data.length - 1 ?
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Tabs')} activeOpacity={0.6} style={styles.Btn}>
+                                <TouchableOpacity onPress={() => this.props.navigation.dispatch(StackActions.replace('LoginSplash'))} activeOpacity={0.6} style={styles.Btn}>
                                     <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Start</Text>
                                 </TouchableOpacity> :
                                 <TouchableOpacity onPress={() => this._handleNext()} activeOpacity={0.6} style={styles.Btn}>
-                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium }}>Next</Text>
+                                    <Text style={{ color: color.fontWhite, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Next</Text>
                                 </TouchableOpacity>
                         }
                     </View>
@@ -163,7 +164,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
     },
     CicleActive: {
-        width: 18,
+        width: 20,
         backgroundColor: color.mainColor,
     },
     BoxCircle: {
@@ -176,8 +177,12 @@ const styles = StyleSheet.create({
         backgroundColor: color.mainColor,
         paddingHorizontal: 20,
         paddingVertical: 3,
-        borderRadius: 10,
+        borderRadius: 20,
         marginLeft: 15,
+    },
+    BtnSkip: {
+        paddingHorizontal: 20,
+        paddingVertical: 3,
     },
     BoxBtn: {
         flexDirection: 'row',

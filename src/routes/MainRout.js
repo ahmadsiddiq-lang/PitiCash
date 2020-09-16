@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,7 +7,7 @@ import MyTabBar from './MyTabbar';
 import Home from '../pages/Home';
 import Project from '../pages/Project';
 import MyProject from '../pages/MyProject';
-import Akun from '../pages/Akun';
+import Profile from '../pages/Profile';
 import BonusPairing from '../pages/BonusPairing';
 import BonusSponsor from '../pages/BonusSponsor';
 import BonusReward from '../pages/BonusReward';
@@ -33,6 +33,9 @@ import History from '../pages/History';
 import TopUpSaldo from '../pages/TopUpSaldo';
 import AllProject from '../pages/AllProject';
 import PemberiDana from '../pages/PemberiDana';
+import Search from '../pages/Search';
+import Registrasi from '../pages/Registrasi';
+import TransferPtc from '../pages/TransferPtc';
 import Splash from '../pages/Splash';
 import { color } from '../assets/colors/color';
 
@@ -44,7 +47,7 @@ function MyTabs() {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Project" component={Project} />
             <Tab.Screen name="MyProject" component={MyProject} />
-            <Tab.Screen name="Akun" component={Reaferals} />
+            <Tab.Screen name="Profile" component={Profile} />
         </Tab.Navigator>
     );
 }
@@ -55,7 +58,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <StatusBar backgroundColor={color.mainColor} barStyle="light-content" />
-            <Stack.Navigator headerMode="none" initialRouteName="Tabs">
+            <Stack.Navigator headerMode="none" initialRouteName="Splash">
                 <Stack.Screen name="Tabs" component={MyTabs} />
                 <Stack.Screen name="BonusPairing" component={BonusPairing} />
                 <Stack.Screen name="BonusSponsor" component={BonusSponsor} />
@@ -83,6 +86,9 @@ export default function App() {
                 <Stack.Screen name="TopUpSaldo" component={TopUpSaldo} />
                 <Stack.Screen name="AllProject" component={AllProject} />
                 <Stack.Screen name="PemberiDana" component={PemberiDana} />
+                <Stack.Screen name="Registrasi" component={Registrasi} />
+                <Stack.Screen name="Search" component={Search} />
+                <Stack.Screen name="TransferPtc" component={TransferPtc} />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -1,11 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { sizeWidth, sizeFont } from '../../assets/responsive/Size';
 import { Poppins } from '../../assets/fonts/Poppins';
 import { color } from '../../assets/colors/color';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function History() {
+
+    const [date, setDate] = useState(new Date());
+    const [show, setShow] = useState(false);
+
+    const onChange = () => {
+        setShow(Platform.OS === 'ios');
+    };
+
+
+    const showDatepicker = () => {
+        setShow(true);
+    };
+
     return (
         <View style={styles.Container}>
             <Text style={{
@@ -18,9 +32,13 @@ export default function History() {
                 <View style={styles.BoxHead}>
                     <Image style={styles.ImageKalender} source={require('../../assets/images/kalender.png')} />
                     <View style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: sizeFont(3.3), color: color.mainColor }}>20 Juni 2020</Text>
+                        <TouchableOpacity onPress={showDatepicker} activeOpacity={0.6}>
+                            <Text style={{ fontSize: sizeFont(3.3), color: color.mainColor }}>20 Juni 2020</Text>
+                        </TouchableOpacity>
                         <Text style={{ fontSize: sizeFont(3.3), color: color.mainColor }}> - </Text>
-                        <Text style={{ fontSize: sizeFont(3.3), color: color.mainColor }}>20 Juni 2020</Text>
+                        <TouchableOpacity onPress={showDatepicker} activeOpacity={0.6}>
+                            <Text style={{ fontSize: sizeFont(3.3), color: color.mainColor }}>20 Juni 2020</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -44,6 +62,16 @@ export default function History() {
                     </View>
                 </ScrollView>
             </View>
+            {show && (
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={'date'}
+                    is24Hour={true}
+                    display="default"
+                    onChange={onChange}
+                />
+            )}
         </View>
     );
 }

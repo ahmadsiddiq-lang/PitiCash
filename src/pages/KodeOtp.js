@@ -6,7 +6,8 @@ import { color } from '../assets/colors/color';
 import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
-import { Poppins } from '../assets/fonts/Poppins';
+import { Poppins, Fredoka } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 export default function KodeOtp({ navigation }) {
     return (
@@ -15,7 +16,7 @@ export default function KodeOtp({ navigation }) {
                 <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
                     <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
                 </TouchableOpacity>
-                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
+                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Fredoka.Regular }}>Piti Cash</Text>
             </View>
             <Content content={[
                 <ContentKodeOtp navigation={navigation} />,
@@ -42,7 +43,7 @@ const ContentKodeOtp = ({ navigation }) => {
     };
     return (
         <View style={styles.BoxContentLogin}>
-            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Sign Up</Text>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Fredoka.Regular }}>Sign Up</Text>
             <Text style={{ fontSize: sizeFont(3.3), marginVertical: 20, color: color.fontBody2 }}>Masukkan kode verifikasi yang telah dikirim melalui SMS ke nomor <Text style={{ fontFamily: Poppins.Medium, color: color.fontBlack }}>0812****0876</Text></Text>
             <View style={styles.BOxContent}>
                 <View style={styles.BoxItem}>
@@ -65,7 +66,7 @@ const ContentKodeOtp = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('Login'))} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Verifikasi</Text>
                 </TouchableOpacity>
                 <Text style={{ textAlign: 'left', fontSize: sizeFont(3.3) }}>Tidak menerima kode ? <Text style={{ color: color.mainColor }}>Kirim ulang</Text></Text>
@@ -92,6 +93,8 @@ const styles = StyleSheet.create({
         marginRight: 20,
         position: 'absolute',
         left: 20,
+        padding: 8,
+        paddingLeft: 0,
     },
     BoxContentLogin: {
         // borderWidth: 1,

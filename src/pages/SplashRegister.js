@@ -6,6 +6,7 @@ import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth, SCREEN_WIDTH } from '../assets/responsive/Size';
 import { Poppins } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 
 export default function SplashRegister({ navigation }) {
@@ -28,12 +29,12 @@ const ContentSplash = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
             <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Sign Up</Text>
-            <Text style={{ color: color.fontBody2 }}>Pendaftaran Anda telah selesai, silahkan cek SMS di handphone Anda untuk verifikasi akun.</Text>
+            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3.3) }}>Pendaftaran Anda telah selesai, silahkan cek SMS di handphone Anda untuk verifikasi akun.</Text>
             <View style={styles.BoxImage}>
                 <Image style={{ resizeMode: 'contain', width: '100%', height: '100%' }} source={require('../assets/images/Login/SplashRegister.png')} />
             </View>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('KodeOtp')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('KodeOtp'))} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Ok</Text>
                 </TouchableOpacity>
             </View>

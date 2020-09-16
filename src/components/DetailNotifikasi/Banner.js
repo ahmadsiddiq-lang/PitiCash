@@ -15,7 +15,7 @@ export default function Banner({ navigation }) {
             <View style={styles.BoxBanner}>
                 <View style={styles.Head}>
                     <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={{ padding: 5 }}>
-                        <Ionicons name="arrow-back" size={30} color={color.fontWhite} />
+                        <Ionicons name="arrow-back" size={25} color={color.fontWhite} />
                     </TouchableOpacity>
                 </View>
                 <Image style={{ resizeMode: 'stretch', width: SCREEN_WIDTH, height: '100%' }} source={require('../../assets/images/Banner1.png')} />

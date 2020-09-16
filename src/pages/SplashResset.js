@@ -5,7 +5,7 @@ import { color } from '../assets/colors/color';
 import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth, SCREEN_WIDTH } from '../assets/responsive/Size';
-import { Poppins } from '../assets/fonts/Poppins';
+import { Poppins, Fredoka } from '../assets/fonts/Poppins';
 
 
 export default function SplashResset({ navigation }) {
@@ -15,7 +15,7 @@ export default function SplashResset({ navigation }) {
                 <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
                     <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
                 </TouchableOpacity>
-                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
+                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Fredoka.Regular }}>Piti Cash</Text>
             </View>
             <Content content={[
                 <ContentSplash navigation={navigation} />,
@@ -27,8 +27,8 @@ export default function SplashResset({ navigation }) {
 const ContentSplash = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
-            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Resset Password</Text>
-            <Text style={{ color: color.fontBody2 }}>Silahkan buka email Anda. Kami telah mengirim email untuk mengatur ulang passowrd Anda. </Text>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Fredoka.Regular }}>Reset Password</Text>
+            <Text style={{ color: color.fontBody2, fontSize: sizeFont(3.3) }}>silahkan buka email anda, kami telah mengirim email ke <Text style={{ fontFamily: Poppins.Medium, color: color.fontBlack }}>john.doe@gmail.com</Text> untuk mengatur ulang password.</Text>
             <View style={styles.BoxImage}>
                 <Image style={{ resizeMode: 'contain', width: '100%', height: '100%' }} source={require('../assets/images/Login/SplashResset.png')} />
             </View>
@@ -36,9 +36,9 @@ const ContentSplash = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Login')} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Ok</Text>
                 </TouchableOpacity>
-                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Email belum masuk ? <Text onPress={() => navigation.navigate('Login')} style={{ color: color.mainColor }}>Kirim Ulang</Text></Text>
+                <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>belum menerima email ? <Text onPress={() => navigation.navigate('ResetPass')} style={{ color: color.mainColor }}>Kirim Ulang</Text></Text>
             </View>
-        </View>
+        </View >
     );
 };
 
@@ -60,6 +60,8 @@ const styles = StyleSheet.create({
         marginRight: 20,
         position: 'absolute',
         left: 20,
+        padding: 8,
+        paddingLeft: 0,
     },
     BoxContentLogin: {
         // borderWidth: 1,

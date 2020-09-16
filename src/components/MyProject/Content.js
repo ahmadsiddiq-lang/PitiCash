@@ -12,10 +12,16 @@ const data = [
     { title: 'Batal' },
 ];
 
+// const dataList = [
+//     { image: require('../../assets/images/Project1.png'), rp: '250.000.000', date: '30 Juli 2020' },
+//     { image: require('../../assets/images/Project2.png'), rp: '250.000.000', date: '01 Agustus 2020' },
+//     { image: require('../../assets/images/Project3.png'), rp: '250.000.000', date: '10 Agustus 2020' },
+// ];
+
 const dataList = [
-    { image: require('../../assets/images/Project1.png'), rp: '250.000.000', date: '30 Juli 2020' },
-    { image: require('../../assets/images/Project2.png'), rp: '250.000.000', date: '01 Agustus 2020' },
-    { image: require('../../assets/images/Project3.png'), rp: '250.000.000', date: '10 Agustus 2020' },
+    { image: require('../../assets/images/Project1.png'), title: 'Bisnis aman dengan Smarty Corner', target: '1000', date: '30 Juli 2020' },
+    { image: require('../../assets/images/Project4.png'), title: 'Project 1000 gerobak Qsah Kebab', target: '500', date: '30 Juli 2020' },
+    { image: require('../../assets/images/Project5.png'), title: 'Product Digital System Enterprise Resource Planning', target: '850', date: '30 Juli 2020' },
 ];
 
 export default function Content({ navigation }) {
@@ -33,7 +39,7 @@ export default function Content({ navigation }) {
                                 borderColor: color.mainColor,
                             },
                             ]}>
-                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBlack }}>{item.title}</Text>
+                                <Text style={indexOf === index ? { color: color.mainColor } : { color: color.fontBody2, fontSize: sizeFont(3.5) }}>{item.title}</Text>
                             </TouchableOpacity>
                         );
                     })
@@ -49,13 +55,13 @@ export default function Content({ navigation }) {
                                 </View>
                                 <View style={styles.BoxContentRight}>
                                     <View style={styles.BoxText}>
-                                        <Text style={{ fontFamily: Poppins.Medium }}>Bersam membangun Smarty Mart</Text>
+                                        <Text style={{ fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Bersama membangun Smarty Mart</Text>
                                         <View style={styles.BoxPrice}>
                                             <View style={styles.boxTgl}>
                                                 <Text style={{ fontSize: sizeFont(2.5), color: color.fontBody2 }}>{item.date}</Text>
                                             </View>
                                             <View style={styles.BoxRp}>
-                                                <Text style={{ fontFamily: Poppins.Medium, marginLeft: 8 }}>Rp. {item.rp}</Text>
+                                                <Text style={{ fontFamily: Poppins.Medium, marginLeft: 8, fontSize: sizeFont(3.5) }}>{item.target} PTC</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -141,9 +147,11 @@ const styles = StyleSheet.create({
     boxTgl: {
         // borderWidth: 1,
         width: sizeWidth(22),
+        marginBottom: 2,
     },
     BoxRp: {
         // borderWidth: 1,
+        // justifyContent: 'flex-end',
         // maxWidth: sizeWidth(40),
     },
 });

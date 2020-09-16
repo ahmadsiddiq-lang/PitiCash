@@ -8,6 +8,9 @@ export const color = {
     background6: '#91fff3',
     border1: '#d4d4d4',
     border2: '#ff45c0',
+    border3: '#707070',
+    border4: '#008574',
+    border0: '#000',
     borderWhite: '#ffff',
     fontBody1: '#000',
     fontBody2: '#757575',
@@ -15,5 +18,6 @@ export const color = {
     fontWhite: '#ffff',
     fontPink: '#ff36ae',
     fontBlack: '#000',
+    fontRed: 'red',
     SearchColor: '#00DCC2',
 };

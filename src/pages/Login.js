@@ -5,17 +5,18 @@ import { color } from '../assets/colors/color';
 import Content from '../components/GlobalComponent/BgContent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { sizeFont, sizeWidth } from '../assets/responsive/Size';
-import { Poppins } from '../assets/fonts/Poppins';
+import { Poppins, Fredoka } from '../assets/fonts/Poppins';
+import { StackActions } from '@react-navigation/native';
 
 
 export default function Login({ navigation }) {
     return (
         <View style={styles.Container}>
             <View style={styles.Head}>
-                <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
+                {/* <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.6} style={styles.BtnBack}>
                     <Ionicons name="arrow-back-outline" size={25} color={color.borderWhite} />
-                </TouchableOpacity>
-                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Poppins.Bold }}>Piti Cash</Text>
+                </TouchableOpacity> */}
+                <Text style={{ color: color.fontWhite, fontSize: sizeFont(7), fontFamily: Fredoka.Regular }}>Piti Cash</Text>
             </View>
             <Content content={[
                 <ContentLogin navigation={navigation} />,
@@ -27,7 +28,7 @@ export default function Login({ navigation }) {
 const ContentLogin = ({ navigation }) => {
     return (
         <View style={styles.BoxContentLogin}>
-            <Text style={{ fontSize: sizeFont(6), fontFamily: Poppins.Bold }}>Log In</Text>
+            <Text style={{ fontSize: sizeFont(6), fontFamily: Fredoka.Regular }}>Log In</Text>
             <View style={styles.BoxInput}>
                 <View style={styles.BoxContentInput}>
                     <Text style={{ paddingHorizontal: 20, marginBottom: 10, fontFamily: Poppins.Medium, fontSize: sizeFont(3.5) }}>Username</Text>
@@ -48,7 +49,7 @@ const ContentLogin = ({ navigation }) => {
                 <Text onPress={() => navigation.navigate('ResetPass')} style={{ textAlign: 'right', fontSize: sizeFont(3.3) }}>Lupa Password ?</Text>
             </TouchableOpacity>
             <View style={styles.Footer}>
-                <TouchableOpacity onPress={() => navigation.navigate('Splash')} activeOpacity={0.6} style={styles.BtnLogin}>
+                <TouchableOpacity onPress={() => navigation.dispatch(StackActions.replace('Tabs'))} activeOpacity={0.6} style={styles.BtnLogin}>
                     <Text style={{ color: color.fontWhite, fontSize: sizeFont(3.5), fontFamily: Poppins.Medium }}>Log In</Text>
                 </TouchableOpacity>
                 <Text style={{ textAlign: 'center', fontSize: sizeFont(3.3) }}>Belum mempunyai akun ? <Text onPress={() => navigation.navigate('SignUp')} style={{ color: color.mainColor }}>SignUp</Text></Text>
@@ -76,6 +77,8 @@ const styles = StyleSheet.create({
         marginRight: 20,
         position: 'absolute',
         left: 20,
+        padding: 8,
+        paddingLeft: 0,
     },
     BoxContentLogin: {
         // borderWidth: 1,

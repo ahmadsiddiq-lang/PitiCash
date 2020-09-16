@@ -8,3 +8,7 @@ export const Poppins = {
     Medium: 'Poppins-Medium',
     MediumItalic: 'Poppins-MediumItalic',
 };
+
+export const Fredoka = {
+    Regular: 'FredokaOne-Regular',
+};

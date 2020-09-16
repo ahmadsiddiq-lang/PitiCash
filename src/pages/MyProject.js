@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { color } from '../assets/colors/color';
 import Header from '../components/Headers/HeaderMyProject';
+// import HeaderSearch from '../components/Headers/HeaderSearch';
 import Content from '../components/MyProject/Content';
 
 
 export default function MyProject({ navigation }) {
+
+    const [HeaderSet, setHeader] = useState(false);
+
     return (
         <View style={styles.Container}>
-            <Header />
+            {/* {
+                HeaderSet ? */}
+            {/* // <HeaderSearch setHeader={setHeader} /> : */}
+            <Header navigation={navigation} setHeader={setHeader} />
+            {/* } */}
             <View style={styles.Content}>
                 <Content navigation={navigation} />
             </View>
